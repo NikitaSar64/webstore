@@ -1,4 +1,12 @@
-import './globals.css'
+import styles from '@styles/globals.module.scss';
+import cn from 'classnames';
+import { Rubik } from 'next/font/google';
+
+const rubik = Rubik({
+    subsets: ['latin'],
+    weight: ['400', '500'],
+    variable: '--font-rubik'
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={cn(styles.main, rubik.variable)}>{children}</body>
     </html>
   )
 }
