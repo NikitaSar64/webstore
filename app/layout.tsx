@@ -1,11 +1,18 @@
 import styles from '@styles/globals.module.scss';
 import cn from 'classnames';
 import { Rubik } from 'next/font/google';
+import { Mulish } from 'next/font/google';
 
 const rubik = Rubik({
     subsets: ['latin'],
     weight: ['400', '500'],
     variable: '--font-rubik'
+})
+
+const mulish = Mulish({
+  subsets: ['latin'],
+  weight: ['600', '700', '400'],
+  variable: '--font-mulish'
 })
 
 export const metadata = {
@@ -20,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(styles.main, rubik.variable)}>{children}</body>
+      <body className={cn(styles.main, rubik.variable, mulish.variable)}>{children}</body>
     </html>
   )
 }

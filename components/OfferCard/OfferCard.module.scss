@@ -1,0 +1,30 @@
+@import '@styles/variables.scss';
+
+.offerCard{
+    font-family: $fontMulish;
+    line-height: 26px;
+    a{
+        color: #757575;
+        font-family: inherit;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        text-decoration: none;
+    }
+    img{
+        margin-left: 5px;
+    }
+}
+
+.title{
+    font-weight: 700;
+    font-size: 22px;
+    color: #555555;
+}
+
+.subtitle{
+    font-weight: 600;
+    font-size: 20px;
+    color: $brightgreen;
+    margin: 10px 0;
+}

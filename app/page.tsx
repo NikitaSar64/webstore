@@ -1,11 +1,16 @@
 'use client'
 
-import { Header } from "@/layout"
+import { Layout } from "@/layout/Layout";
+import { HeroContainer, AdvantagesContainer, OfferContainer } from "@/containers";
 
 export default function Home() {
   return (
     <>
-      <Header/>
+      <Layout>
+        <HeroContainer/>
+        <AdvantagesContainer/>
+        <OfferContainer/>
+      </Layout>
     </>
   )
 }

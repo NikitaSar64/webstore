@@ -1,10 +1,11 @@
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { SliderProps } from './Slider.props';
 import './Slider.scss';
 import 'swiper/swiper.css';
 import 'swiper/css/pagination';
 
-export const Slider = (): JSX.Element => {
+export const Slider = ( { className } : SliderProps): JSX.Element => {
     return (
         <Swiper
             loop
@@ -15,7 +16,7 @@ export const Slider = (): JSX.Element => {
                     bulletActiveClass: 'activeBullet',
                     bulletClass: 'bullet',
                 }}  
-            className='slider'
+            className={className}
             slidesPerView={1}
         >
             <SwiperSlide className='slide'>Slide 1</SwiperSlide>

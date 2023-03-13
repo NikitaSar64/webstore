@@ -1,0 +1,62 @@
+@import '@styles/variables.scss';
+
+.top{
+    margin-bottom: 50px;
+}
+
+.container{
+    width: 1170px;
+    margin: 0 auto;
+    color: $lightgray;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.social{
+    img{
+        margin-right: 22px;
+    }
+}
+
+.section{
+    font-size: 18px;
+    line-height: 40px;
+    .title{
+        font-weight: 500;
+    }
+    a{
+        text-decoration: none;
+        color: $lightgray;
+    }
+    .links{
+        display: flex;
+        flex-direction: column;
+    }
+    .description{
+        width: 315px;
+        line-height: 32px;
+        font-size: 16px;
+        margin: 15px 0;
+    }
+}
+
+.bottom{
+    border-top: 1px #969696 solid;
+    height: 84px;
+    font-size: 14px;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+    a{
+        margin: 0 25px;
+        text-decoration: none;
+        color: $lightgray;
+    }
+}

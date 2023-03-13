@@ -2,31 +2,23 @@
 
 .slide{
     background: lightcyan;
-    border: 2px dashed black;
     box-sizing: border-box;
 }
 
-.slider{
-    height: 300px;
-    .bullet{
-        display: inline-block;
-        background: $lightgreen;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin: 0 7.5px;
-        cursor: pointer;
-    }
-    .activeBullet {
-        width: 24px;
-        height: 9px;
-        border-radius: 666px;
-        background: $green;
-    }
+.bullet{
+    display: inline-block;
+    background: $lightgreen;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 7.5px;
+    cursor: pointer;
+}
+.activeBullet {
+    width: 24px;
+    height: 9px;
+    border-radius: 666px;
+    background: $green;
+    margin-bottom: 1.5px;
 }
 
-.slider div:last-child{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}

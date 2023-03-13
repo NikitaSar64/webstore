@@ -42,7 +42,7 @@ export const Header = () : JSX.Element => {
                 </div>
             </div>
             <div className={styles.bottom}>
-                <div className={styles.container}>
+                <div className={cn(styles.container, styles.flex)}>
                     <Logo/>
                     <Search/>
                     <HeaderMenu/>
