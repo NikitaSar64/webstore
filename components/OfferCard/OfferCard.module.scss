@@ -2,6 +2,11 @@
 
 .offerCard{
     font-family: $fontMulish;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    padding: 50px 25px;
+    box-sizing: border-box;
     line-height: 26px;
     a{
         color: #757575;
@@ -28,3 +33,5 @@
     color: $brightgreen;
     margin: 10px 0;
 }
+
+

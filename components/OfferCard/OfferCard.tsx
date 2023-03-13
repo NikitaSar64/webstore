@@ -19,6 +19,6 @@ export const OfferCard = ({ title, subtitle, background, className }:OfferCardPr
                         alt='link'
                         />
                 </Link>
-            </div>
+        </div>
     )
 }
