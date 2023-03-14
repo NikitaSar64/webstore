@@ -5,7 +5,7 @@ import { fetchDataForOffer } from '@/api';
 import { ProductModel } from '@/interface';
 
 export const OfferContainer = () : JSX.Element => {
-    const { isLoading, error, isSuccess, data } = useQuery('offerData',fetchDataForOffer<ProductModel[]>);
+    const { isSuccess, data } = useQuery('offerData',fetchDataForOffer<ProductModel[]>);
 
     return (
         <section>

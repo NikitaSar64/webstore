@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import LogoIcon from './logo.svg';
+import LogoIcon from '@assets/icons/logo/logo.svg';
 import styles from './Logo.module.scss';
 
 export const Logo = (): JSX.Element => {

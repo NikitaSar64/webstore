@@ -27,6 +27,7 @@
       "@assets/*": ["assets/*"],
       "@containers/*": ["containers/*"],
       "@interface/*": ["interface/*"],
+      "@helpers/*": ["helpers/*"]
     },
     "baseUrl": "./",
   },

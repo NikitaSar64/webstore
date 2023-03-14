@@ -1,8 +1,9 @@
+import BasketIcon from '@assets/icons/headerMenu/basket.svg';
+import AvatarIcon from '@assets/icons/headerMenu/avatar.svg';
+import NotivicationIcon from '@assets/icons/headerMenu/notification.svg';
+
 import Image from 'next/image';
 import styles from './HeaderMenu.module.scss';
-import BasketIcon from './basket.svg';
-import AvatarIcon from './avatar.svg';
-import NotivicationIcon from './notification.svg';
 
 export const HeaderMenu = () : JSX.Element => {
     return (
