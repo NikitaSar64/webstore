@@ -1,8 +1,14 @@
 @import '@styles/variables.scss';
 
+.link{
+    text-decoration: none;
+}
+
 .card{
     width: 270px;
-    cursor: pointer;
+    img{
+        cursor: pointer;
+    }
 }
 
 .rate{
@@ -19,6 +25,7 @@
     text-transform: uppercase;
     color: rgba(117, 117, 117, 0.71);
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .title{
@@ -30,6 +37,7 @@
     letter-spacing: 0.005em;
     color: #555555;
     margin: 8px 0;
+    cursor: pointer;
 }
 
 .price{

@@ -43,7 +43,9 @@ export const TrandingContainer = () : JSX.Element => {
                                         slide.map(product => 
                                             <Card
                                                 key={product.id}
+                                                id={product.id}
                                                 category={product.category}
+                                                description={product.description}
                                                 title={product.title}
                                                 price={product.price}
                                                 rating={product.rating.rate}
