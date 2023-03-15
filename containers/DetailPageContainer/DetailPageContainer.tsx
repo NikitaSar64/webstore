@@ -13,7 +13,7 @@ export const DetailPageContainer = () : JSX.Element => {
     const addProductToBasket = productStore(state => state.addProductToBasket);
 
     return (
-        <section>
+        <section className={styles.detailPageContainer}>
             <div className={styles.container}>
                 {
                     isSuccess && 

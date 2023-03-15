@@ -2,17 +2,20 @@
 
 .link{
     text-decoration: none;
+    flex-grow: 1;
 }
 
 .card{
     width: 270px;
+    display: flex;
+    flex-direction: column;
     img{
         cursor: pointer;
     }
 }
 
 .rate{
-    color: $brightgreen;
+    color: $brightgreen !important;
     font-size: 15px;
 }
 

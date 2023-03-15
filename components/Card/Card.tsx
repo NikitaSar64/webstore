@@ -42,7 +42,7 @@ export const Card = ( {id, category, description, image, title, price, rating, c
                         <div 
                             className={styles.option}
                             onClick={() => addProductToBasket({id, category, description, image, title, price, rating})}
-                        >
+                            >
                             <Image
                                 src={basketIcon}
                                 width={24}
