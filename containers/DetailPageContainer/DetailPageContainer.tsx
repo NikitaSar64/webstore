@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Rate, Divider, Button } from 'antd';
 import Image from 'next/image';
 import { productStore } from '@/store';
+import { pushDataToLocalStorage } from '@/helpers/pushDataToLocalStorage';
 
 export const DetailPageContainer = () : JSX.Element => {
     const id = usePathname().split('/')[2];
@@ -37,7 +38,8 @@ export const DetailPageContainer = () : JSX.Element => {
                                 <Divider/>
                                 <Button 
                                     className={styles.basketBtn}
-                                    onClick={() => addProductToBasket(
+                                    onClick={() => {
+                                        addProductToBasket(
                                         { 
                                             id: data.id, 
                                             category: data.category, 
@@ -46,8 +48,18 @@ export const DetailPageContainer = () : JSX.Element => {
                                             title: data.title, 
                                             rating: data.rating.rate, 
                                             price: data.price
-                                        }
-                                    )}
+                                        })
+                                        pushDataToLocalStorage('basket', {
+                                            id: data.id, 
+                                            category: data.category, 
+                                            description: data.description, 
+                                            image: data.image, 
+                                            title: data.title, 
+                                            rating: data.rating.rate, 
+                                            price: data.price
+                                        })
+                                    }
+                                }
                                 >
                                     Добавить в корзину
                                 </Button>
