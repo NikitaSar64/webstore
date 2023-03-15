@@ -9,12 +9,16 @@ import styles from './HeaderMenu.module.scss';
 import { useEffect } from 'react';
 
 export const HeaderMenu = ()  => {
-    const [basket, favorites] = productStore(state => [ state.basket, state.favorites ])
+    const [basket, favorites, loadBasketFromLocalStorage, loadFavouritesFromLocalStorage] = productStore(state => [ state.basket, state.favorites, state.loadBasketFromLocalStorage, state.loadFavouritesFromLocalStorage])
 
     useEffect(() => {
-        localStorage.setItem('basket', JSON.stringify(basket))
-        localStorage.setItem('favorites', JSON.stringify(favorites))
-    }, [basket, favorites])
+        
+        if (!localStorage.basket) localStorage.setItem('basket', JSON.stringify([]))
+        if (!localStorage.favorites) localStorage.setItem('favorites', JSON.stringify([]))
+
+        loadBasketFromLocalStorage(JSON.parse(localStorage.getItem('basket') as string))
+        loadFavouritesFromLocalStorage(JSON.parse(localStorage.getItem('favorites') as string))
+    },[])
 
     return (
         <div className={styles.wrapper}>

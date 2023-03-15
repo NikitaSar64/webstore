@@ -8,6 +8,7 @@ import eyetIcon from '@assets/icons/card/eye.svg';
 import favoritesIcon from '@assets/icons/card/favorites.svg';
 import refreshtIcon from '@assets/icons/card/refresh.svg';
 import { productStore } from '@/store';
+import { pushDataToLocalStorage } from '@/helpers/pushDataToLocalStorage';
 
 export const Card = ( {id, category, description, image, title, price, rating, children,  } : CardProps) : JSX.Element => {
     const [ addProductToBasket, addProductToFavorites ] = productStore(state => [state.addProductToBasket, state.addProductToFavorites ]);
@@ -30,7 +31,11 @@ export const Card = ( {id, category, description, image, title, price, rating, c
                     <div className={styles.options}>
                         <div 
                             className={styles.option}
-                            onClick={() => addProductToFavorites({id, category, description, image, title, price, rating})}
+                            onClick={() => {
+                                addProductToFavorites({id, category, description, image, title, price, rating})
+                                pushDataToLocalStorage('favorites', {id, category, description, image, title, price, rating})
+                                }
+                            }
                         >
                             <Image
                                 src={favoritesIcon}
@@ -41,7 +46,11 @@ export const Card = ( {id, category, description, image, title, price, rating, c
                         </div>
                         <div 
                             className={styles.option}
-                            onClick={() => addProductToBasket({id, category, description, image, title, price, rating})}
+                            onClick={() => {
+                                addProductToBasket({id, category, description, image, title, price, rating})
+                                pushDataToLocalStorage('basket', {id, category, description, image, title, price, rating})
+                                }
+                            }
                             >
                             <Image
                                 src={basketIcon}

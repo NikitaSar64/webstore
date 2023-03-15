@@ -1,0 +1,23 @@
+@import '@styles/variables.scss';
+
+.container{
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px
+}
+
+.title{
+    font-family: $fontMulish;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+    color: #555555;
+    text-align: center;
+    margin-bottom: 60px;
+}
+

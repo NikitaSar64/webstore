@@ -1,7 +1,7 @@
 'use client'
 
 import { Layout } from "@/layout/Layout";
-import { HeroContainer, AdvantagesContainer, OfferContainer, TrandingContainer } from "@/containers";
+import { HeroContainer, AdvantagesContainer, OfferContainer, TrandingContainer, SpecialOfferContainer, OurProductContainer } from "@/containers";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient()
@@ -14,6 +14,8 @@ export default function Home() {
         <AdvantagesContainer/>
         <OfferContainer/>
         <TrandingContainer/>
+        <SpecialOfferContainer/>
+        <OurProductContainer/>
       </Layout> 
     </QueryClientProvider>
   )

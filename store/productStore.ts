@@ -1,7 +1,6 @@
-import { StateCreator, create } from 'zustand';
-import { persist, createJSONStorage  } from 'zustand/middleware';
+import { create } from 'zustand';
 
-interface Product{
+export interface Product{
     id: string;
     category: string;
 	description: string;
@@ -17,11 +16,13 @@ interface ProductStore{
     addProductToBasket: (product: Product) => void;
     addProductToFavorites: (product: Product) => void;
     removeProductFromBasket: (index: number) => void;
+    loadBasketFromLocalStorage: (localStoreProduct: Product[]) => void;
+    loadFavouritesFromLocalStorage: (localStoreProduct: Product[]) => void;
 }
 
 export const productStore = create<ProductStore>((set) => ({
-    basket: !!(localStorage.basket) ? JSON.parse(localStorage.basket) : [],
-    favorites: !!(localStorage.favorites) ? JSON.parse(localStorage.favorites) : [],
+    basket: [],
+    favorites: [],
     addProductToBasket: (newproduct) => set(state => ({ 
         basket: [
             ...state.basket,
@@ -38,6 +39,12 @@ export const productStore = create<ProductStore>((set) => ({
         basket: [
             ...state.basket.filter((product, i) => i != index)
         ]
+    })),
+    loadBasketFromLocalStorage: (localStoreProduct) => set(state => ({
+        basket: [ ...localStoreProduct ]
+    })),
+    loadFavouritesFromLocalStorage: (localStoreProduct) => set(state => ({
+        favorites: [ ...localStoreProduct ]
     }))
 })
 )

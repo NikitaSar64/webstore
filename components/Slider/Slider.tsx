@@ -9,6 +9,7 @@ export const Slider = ( { className } : SliderProps): JSX.Element => {
     return (
         <Swiper
             loop
+            grabCursor={true}
             modules={[Pagination]}
             pagination={
                 { 
