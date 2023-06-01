@@ -1,22 +1,16 @@
-import Image from 'next/image';
-import LogoIcon from '@assets/icons/logo/logo.svg';
-import styles from './Logo.module.scss';
-import Link from 'next/link';
+import Image from "next/image";
+import { FC } from "react";
 
-export const Logo = (): JSX.Element => {
+import logo from '@assets/logo/logo.png';
+
+export const Logo: FC = () => {
     return (
-        <Link href={'/'} className={styles.link}>
-            <div className={styles.logoWrapper}>
-                <Image
-                    src={LogoIcon}
-                    width={32}
-                    height={38}
-                    alt='Logo'
-                />
-                <div className={styles.logoName}>
-                    Furniking
-                </div>
-            </div>
-        </Link>
+        <a>
+            <Image
+                alt="logoIcon"
+                src={logo}
+                width={144}
+                height={50}/>
+        </a>
     )
 }

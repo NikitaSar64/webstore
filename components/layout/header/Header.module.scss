@@ -1,0 +1,51 @@
+@import '@styles/variables.scss';
+
+.headerTopWrapper{
+    height: 90px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text{
+    margin-left: auto;
+    margin-right: 50px;
+
+    a:first-child{
+        color: $red;
+    }
+}
+
+.login{
+    background: $green;
+}
+
+.register{
+    background: $red;
+
+    margin-left: 7px;
+}
+
+.headerMenu{
+    background: $bg;
+}
+
+.menu{
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+}
+
+.menuList{
+    li{
+        display: inline-block;
+
+        color: #fff;
+
+        & + li{
+            margin-left: 30px;
+        }
+    }
+}
