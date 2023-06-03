@@ -22,6 +22,7 @@ export const ProductContainer: FC = () => {
                         category="Site Template"
                         price={19}
                         authorImg={testAuthor}
+                        rating={3}
                     />
                 </div>
                 <Button

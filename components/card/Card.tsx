@@ -1,10 +1,13 @@
+'use client'
+
 import { FC } from "react";
+import Rating from '@mui/material/Rating';
 import { CardProps } from "./Card.props";
 
 import styles from './Card.module.scss';
 import Image from "next/image";
 
-export const Card : FC<CardProps> = ({name, category, price, productImg, authorImg}) => {
+export const Card : FC<CardProps> = ({name, category, price, productImg, authorImg, rating}) => {
     return (
         <div className={styles.card}>
             <Image
@@ -38,7 +41,8 @@ export const Card : FC<CardProps> = ({name, category, price, productImg, authorI
                     </div>
                     </div>
                 <div className={styles.cardRating}>
-                    5
+                    <Rating name="read-only" value={rating} readOnly />
+                    ( {rating} )
                 </div>
             </div>
         </div>

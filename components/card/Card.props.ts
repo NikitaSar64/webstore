@@ -6,5 +6,5 @@ export interface CardProps{
     price: number;
     productImg: StaticImageData;
     authorImg: StaticImageData;
-
+    rating: number
 }
