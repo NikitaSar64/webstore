@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Logo } from "@components/index";
 import { Button } from "./ui/button/Button";
 
-import '@styles/global.scss';
 import styles from './Header.module.scss';
 
 export const Header: FC = () => {
