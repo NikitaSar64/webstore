@@ -1,0 +1,71 @@
+@import '@styles/variables.scss';
+
+.card{
+    max-width: 440px;
+
+    background-color: #fff;
+
+    box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
+}
+
+.cardContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 90px;
+
+    padding: 10px 30px;
+
+    border-bottom: 1px solid #e7ecf2;
+}
+
+.cardTitle{
+    max-width: 310px;
+
+    font-weight: 500;
+    .cardName{
+        color: $bg;
+
+        font-size: 18px;
+    }
+    .cardCategory{
+        color: $green;
+
+        font-size: 14px;
+    }
+}
+
+.cardPrice{
+    font-size: 20px;
+    font-weight: 700;
+
+    color: $bg;
+}
+
+.cardInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    min-height: 70px;
+
+    padding: 10px 30px;
+}
+
+.cardAuthor{
+    display: flex;
+    align-items: center;
+}
+
+.authorImg{
+    border-radius: 50%;
+    
+    margin-right: 14px;
+}
+
+.authorName{
+    font-size: 14px;
+
+    color: $color-text;
+}

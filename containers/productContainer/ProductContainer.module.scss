@@ -1,0 +1,13 @@
+@import '@styles/variables.scss';
+
+.product{
+    padding: 110px 0px;
+
+    background-color: $gray;
+}
+
+.productWrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
