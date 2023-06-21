@@ -1,14 +1,17 @@
 import { Layout } from "@/components";
-import { ProductContainer, SearchContainer } from "@/containers";
-
+import {
+  ProductContainer,
+  SearchContainer,
+  TrandingContainer,
+} from "@/containers";
 
 export default function Home() {
   return (
     <>
-      <Layout/>
-      <SearchContainer/>
-      <ProductContainer/>
-
+      <Layout />
+      <SearchContainer />
+      <ProductContainer />
+      <TrandingContainer />
     </>
-  )
+  );
 }
