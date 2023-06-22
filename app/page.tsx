@@ -1,5 +1,6 @@
 import { Layout } from "@/components";
 import {
+  AdvantagesContainer,
   ProductContainer,
   SearchContainer,
   TrandingContainer,
@@ -12,6 +13,7 @@ export default function Home() {
       <SearchContainer />
       <ProductContainer />
       <TrandingContainer />
+      <AdvantagesContainer />
     </>
   );
 }
