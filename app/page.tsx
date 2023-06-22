@@ -5,17 +5,18 @@ import {
   ProductContainer,
   SearchContainer,
   TrandingContainer,
+  TutorialContainer,
 } from "@/containers";
 
 export default function Home() {
   return (
-    <>
-      <Layout />
+    <Layout>
       <SearchContainer />
       <ProductContainer />
       <TrandingContainer />
       <AdvantagesContainer />
       <AuthorContainer />
-    </>
+      <TutorialContainer />
+    </Layout>
   );
 }

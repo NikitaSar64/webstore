@@ -1,0 +1,26 @@
+@import "@styles/variables.scss";
+
+.item {
+  max-width: 370px;
+  width: 100%;
+}
+
+.img {
+  min-height: 270px;
+
+  position: relative;
+}
+
+.title {
+  background-color: #f8f8f8;
+
+  font-size: 24px;
+
+  text-align: center;
+
+  font-weight: 700;
+
+  padding: 30px 10px;
+
+  color: $bg;
+}

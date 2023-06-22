@@ -1,0 +1,200 @@
+@import "@styles/variables.scss";
+
+.footer {
+  background-color: $bg;
+}
+
+.content {
+  padding: 100px 0 80px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  max-width: 270px;
+  width: 100%;
+}
+
+.columnMenu {
+  max-width: 220px;
+  width: 100%;
+}
+
+.columnTitle {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+
+  color: #fff;
+
+  padding-bottom: 30px;
+
+  margin-bottom: 30px;
+
+  position: relative;
+  &::before {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 2px;
+
+    width: 51px;
+    height: 3px;
+
+    background-color: $green;
+  }
+}
+
+.columnText {
+  color: #b7c3c8;
+
+  margin-bottom: 30px;
+}
+
+.info {
+  margin-top: 18px;
+
+  font-weight: 500;
+  font-size: 14px;
+
+  color: #fff;
+
+  display: flex;
+  align-items: flex-start;
+
+  div {
+    margin-left: 17px;
+  }
+}
+
+.fontIcon {
+  font-size: 18px;
+
+  margin-top: 3px;
+
+  color: $green;
+}
+
+.columnList {
+  li {
+    color: #b7c3c8;
+    position: relative;
+
+    padding-left: 22px;
+
+    margin-bottom: 13px;
+
+    &::before {
+      content: url("../../../assets/icons/angle-right.svg");
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+.social {
+  margin-bottom: 33px;
+  li {
+    width: 28px;
+    height: 28px;
+
+    background-image: url("../../../assets/social/social_sprites.png");
+
+    display: inline-block;
+    & + li {
+      margin-left: 7px;
+    }
+  }
+
+  .linkedIn {
+    background-position: -28px -0;
+  }
+
+  .youTube {
+    background-position: -56px -0;
+  }
+
+  .pinterest {
+    background-position: -0 -28px;
+  }
+
+  .twitter {
+    background-position: -28px -28px;
+  }
+}
+
+.formTitle {
+  margin-bottom: 15px;
+
+  color: #fff;
+
+  font-size: 20px;
+}
+
+.form {
+  position: relative;
+  input {
+    border: none;
+
+    background-color: #2f3c43;
+
+    display: block;
+
+    width: 100%;
+
+    height: 40px;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    padding-left: 13px;
+    padding-right: 50px;
+    &::placeholder {
+      color: #697378;
+    }
+  }
+  button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    background-color: $green;
+    border: none;
+
+    height: 40px;
+    width: 43px;
+
+    cursor: pointer;
+    &::before {
+      content: url("../../../assets/icons/location-arrow.svg");
+
+      position: absolute;
+      top: 10px;
+      left: 9px;
+    }
+  }
+}
+
+.copy {
+  border-top: 1px solid #424d53;
+}
+
+.copyText {
+  text-align: center;
+
+  font-size: 15px;
+
+  color: #919699;
+
+  padding: 25px;
+
+  margin: 0;
+}
