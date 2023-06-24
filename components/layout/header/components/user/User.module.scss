@@ -1,0 +1,97 @@
+@import "@styles/variables.scss";
+
+.user {
+  display: flex;
+  align-items: center;
+
+  margin: 0 22px;
+
+  position: relative;
+
+  height: 90px;
+
+  &:hover {
+    .menu {
+      height: auto;
+
+      border-width: 1px;
+
+      overflow: auto;
+
+      padding: 20px;
+    }
+  }
+}
+
+.img {
+  width: 34px;
+  height: 34px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  margin-right: 15px;
+}
+
+.info {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.name {
+  color: #222;
+
+  font-weight: 500;
+}
+
+.balance {
+  color: $green;
+
+  font-weight: 700;
+}
+
+.menu {
+  border: 0px solid rgba(204, 204, 204);
+
+  background-color: #fff;
+
+  padding: 0 20px;
+
+  width: 160px;
+
+  position: absolute;
+  top: 90px;
+  left: 0;
+
+  transition: all 0.3s;
+  height: 0px;
+
+  overflow: hidden;
+
+  ul {
+    li {
+      position: relative;
+
+      font-size: 12px;
+
+      line-height: 23px;
+
+      color: #546e7a;
+
+      padding-left: 20px;
+
+      & + li {
+        margin-top: 10px;
+      }
+      &::before {
+        content: url("../../../../../assets/icons/angle-right.svg");
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+}

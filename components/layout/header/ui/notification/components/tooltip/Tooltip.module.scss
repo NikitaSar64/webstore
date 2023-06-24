@@ -1,0 +1,64 @@
+@import "@styles/variables.scss";
+
+.tooltip {
+  width: 270px;
+
+  position: absolute;
+  top: 32px;
+  right: 0;
+
+  height: 0px;
+
+  overflow: hidden;
+  div {
+    transition: padding 0.3s;
+  }
+
+  button {
+    font-weight: 700;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    padding: 12px 5px;
+
+    text-align: center;
+
+    border: none;
+    &:nth-of-type(1) {
+      width: 100px;
+
+      margin-right: 6px;
+
+      background-color: $green;
+    }
+    &:nth-of-type(2) {
+      width: 120px;
+
+      background-color: $red;
+    }
+  }
+}
+
+.total {
+  padding: 16px 20px 12px;
+
+  border: 1px solid #e0e0e0;
+
+  background-color: #fff;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 18px;
+
+  margin-bottom: 15px;
+
+  font-weight: 700;
+
+  font-size: 16px;
+
+  color: $bg;
+}

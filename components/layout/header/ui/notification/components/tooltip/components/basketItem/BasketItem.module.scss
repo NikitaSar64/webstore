@@ -1,0 +1,48 @@
+@import "@styles/variables.scss";
+
+.basketItem {
+  background-color: #fff;
+
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  margin-right: 15px;
+
+  position: relative;
+
+  height: 60px;
+  max-width: 75px;
+  width: 100%;
+}
+
+.info {
+  font-weight: 500;
+
+  line-height: 24px;
+}
+
+.name {
+  color: $bg;
+}
+
+.category {
+  font-weight: 400;
+
+  font-size: 12px;
+
+  color: $green;
+}
+
+.price {
+  color: #000;
+
+  font-size: 16px;
+}
