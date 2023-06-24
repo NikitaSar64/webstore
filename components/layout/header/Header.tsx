@@ -19,11 +19,9 @@ export const Header: FC = (): JSX.Element => {
               Talk to an expert:
               <a href="tel:+61383766284">+61 3 8376 6284</a>
             </div>
-            <div className={styles.notification}>
-              <Notification type="notification" count={8} />
-              <Notification type="message" count={5} />
-              <Notification type="basket" count={3} />
-            </div>
+            <Notification type="notification" count={8} />
+            <Notification type="message" count={5} />
+            <Notification type="basket" count={3} />
             <User name="Mike Hussy" img={userImg} balance={100} />
             <Button text="Login" className={styles.login} />
             <Button text="Register" className={styles.register} />

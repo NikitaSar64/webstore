@@ -1,6 +1,15 @@
 @import "@styles/variables.scss";
 
 .notification {
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+
+  margin: 0 7.5px;
+}
+
+.circle {
   width: 34px;
   height: 34px;
 
