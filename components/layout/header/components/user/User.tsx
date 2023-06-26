@@ -1,17 +1,17 @@
+"use client";
+
 import { FC } from "react";
 import styles from "./User.module.scss";
 import { UserProps } from "./User.props";
-import Image from "next/image";
+import { Avatar } from "@mui/material";
 
-export const User: FC<UserProps> = ({ name, balance, img }): JSX.Element => {
+export const User: FC<UserProps> = ({ userData }): JSX.Element => {
   return (
     <div className={styles.user}>
-      <div className={styles.img}>
-        <Image src={img} fill style={{ objectFit: "contain" }} alt="userImg" />
-      </div>
+      <Avatar src={userData.img} />
       <div className={styles.info}>
-        <div className={styles.name}>{name}</div>
-        <div className={styles.balance}>{balance}</div>
+        <div className={styles.name}>{userData.name}</div>
+        <div className={styles.balance}>{userData.balance}</div>
       </div>
       <div className={styles.menu}>
         <ul>
@@ -23,6 +23,7 @@ export const User: FC<UserProps> = ({ name, balance, img }): JSX.Element => {
           <li>Upload Item</li>
           <li>Statement</li>
           <li>Withdraws</li>
+          <li className={styles.logout}>Logout</li>
         </ul>
       </div>
     </div>

@@ -67,3 +67,12 @@
 .yellow {
   background-color: $yellow;
 }
+
+@media (max-width: 840px) {
+  .notification {
+    display: none;
+    &:nth-of-type(3) {
+      display: flex;
+    }
+  }
+}

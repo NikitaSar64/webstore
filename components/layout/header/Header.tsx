@@ -3,9 +3,13 @@ import { Logo } from "@components/index";
 import { Button, Notification } from "./ui";
 
 import styles from "./Header.module.scss";
-import { User } from "./components";
+import { Menu, User } from "./components";
 
-import userImg from "@assets/user.png";
+const testUser = {
+  name: "Mike Hussy",
+  img: "/user.png",
+  balance: 100,
+};
 
 export const Header: FC = (): JSX.Element => {
   return (
@@ -13,18 +17,24 @@ export const Header: FC = (): JSX.Element => {
       <div className={styles.headerTop}>
         <div className="container">
           <div className={styles.headerTopWrapper}>
-            <Logo />
+            <div className={styles.box}>
+              <Menu />
+              <Logo className={styles.logo} />
+            </div>
             <div className={styles.text}>
               <a href="#">Need help?</a>
               Talk to an expert:
               <a href="tel:+61383766284">+61 3 8376 6284</a>
             </div>
-            <Notification type="notification" count={8} />
-            <Notification type="message" count={5} />
-            <Notification type="basket" count={3} />
-            <User name="Mike Hussy" img={userImg} balance={100} />
-            <Button text="Login" className={styles.login} />
-            <Button text="Register" className={styles.register} />
+            <div className={styles.box}>
+              <Notification type="notification" count={8} />
+              <Notification type="message" count={5} />
+              <Notification type="basket" count={3} />
+              <User userData={testUser} />
+              <Button text="Login" className={styles.login} />
+              <Button text="Register" className={styles.register} />
+              <Button text="Logout" className={styles.register} />
+            </div>
           </div>
         </div>
       </div>

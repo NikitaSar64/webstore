@@ -3,8 +3,13 @@
 .user {
   display: flex;
   align-items: center;
+  justify-content: space-around;
 
   margin: 0 22px;
+
+  padding: 0 15px;
+
+  width: 160px;
 
   position: relative;
 
@@ -23,22 +28,11 @@
   }
 }
 
-.img {
-  width: 34px;
-  height: 34px;
-
-  position: relative;
-
-  overflow: hidden;
-
-  border-radius: 50%;
-
-  margin-right: 15px;
-}
-
 .info {
   font-size: 14px;
   line-height: 24px;
+
+  margin-left: 15px;
 }
 
 .name {
@@ -71,6 +65,8 @@
 
   overflow: hidden;
 
+  z-index: 1;
+
   ul {
     li {
       position: relative;
@@ -93,5 +89,22 @@
         top: 0;
       }
     }
+  }
+}
+
+.logout {
+  display: none;
+}
+
+@media (max-width: 840px) {
+  .user {
+    margin: 0;
+  }
+  .logout {
+    display: block;
+  }
+  .menu {
+    right: 0;
+    left: unset;
   }
 }
