@@ -1,4 +1,4 @@
-import { Layout } from "@/components";
+import { Auth, Button, Layout } from "@/components";
 import {
   AdvantagesContainer,
   AuthorContainer,
@@ -11,12 +11,12 @@ import {
 export default function Home() {
   return (
     <Layout>
-      {/* <SearchContainer />
+      <SearchContainer />
       <ProductContainer />
       <TrandingContainer />
       <AdvantagesContainer />
       <AuthorContainer />
-      <TutorialContainer /> */}
+      <TutorialContainer />
     </Layout>
   );
 }

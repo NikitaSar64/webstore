@@ -3,6 +3,7 @@
 import { FC } from "react";
 import Rating from "@mui/material/Rating";
 import { CardProps } from "./Card.props";
+import Avatar from "@mui/material/Avatar";
 
 import styles from "./Card.module.scss";
 import Image from "next/image";
@@ -12,10 +13,10 @@ export const Card: FC<CardProps> = ({
   category,
   price,
   productImg,
-  authorImg,
+  authorAvatar,
   authorName,
   rating,
-}) => {
+}): JSX.Element => {
   return (
     <div className={styles.card}>
       <div className={styles.cardImg}>
@@ -36,14 +37,8 @@ export const Card: FC<CardProps> = ({
         <div className={styles.cardPrice}>$ {price}</div>
       </div>
       <div className={styles.cardInfo}>
-        <div className={styles.cardAuthor}>
-          <Image
-            className={styles.authorImg}
-            alt="cardImg"
-            src={authorImg}
-            width={32}
-            height={32}
-          />
+        <div className={styles.authorBox}>
+          <Avatar src={authorAvatar} alt="author-avatar" />
           <div className={styles.authorName}>{authorName}</div>
         </div>
         <div className={styles.cardRating}>

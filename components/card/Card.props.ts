@@ -5,7 +5,7 @@ export interface CardProps {
   category: string;
   price: number;
   productImg: StaticImageData;
-  authorImg: StaticImageData;
+  authorAvatar: string;
   authorName: string;
   rating: number;
 }

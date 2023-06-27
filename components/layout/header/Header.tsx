@@ -1,5 +1,7 @@
-import { FC } from "react";
-import { Logo } from "@components/index";
+"use client";
+
+import { FC, useState } from "react";
+import { Auth, Logo, PopUp } from "@components/index";
 import { Button, Notification } from "./ui";
 
 import styles from "./Header.module.scss";
@@ -12,6 +14,8 @@ const testUser = {
 };
 
 export const Header: FC = (): JSX.Element => {
+  const [popUpActive, setPopUpActive] = useState<boolean>(false);
+
   return (
     <header>
       <div className={styles.headerTop}>
@@ -31,7 +35,11 @@ export const Header: FC = (): JSX.Element => {
               <Notification type="message" count={5} />
               <Notification type="basket" count={3} />
               <User userData={testUser} />
-              <Button text="Login" className={styles.login} />
+              <Button
+                text="Login"
+                className={styles.login}
+                onClick={() => setPopUpActive(true)}
+              />
               <Button text="Register" className={styles.register} />
               <Button text="Logout" className={styles.register} />
             </div>
@@ -56,6 +64,13 @@ export const Header: FC = (): JSX.Element => {
           </nav>
         </div>
       </div>
+      <PopUp
+        active={popUpActive}
+        setActive={setPopUpActive}
+        className={styles.authPopUp}
+      >
+        <Auth />
+      </PopUp>
     </header>
   );
 };

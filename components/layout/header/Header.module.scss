@@ -63,6 +63,16 @@
   display: none;
 }
 
+.authPopUp {
+  background-color: $green;
+
+  max-width: 730px;
+  width: 100%;
+
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
 @media (max-width: 1150px) {
   .text {
     display: none;

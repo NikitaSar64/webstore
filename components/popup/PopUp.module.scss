@@ -1,0 +1,30 @@
+.popUpInner {
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  background-color: rgba(0, 0, 0, 0.4);
+
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popUp {
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+
+  right: 10px;
+  top: 10px;
+
+  cursor: pointer;
+}

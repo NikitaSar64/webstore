@@ -5,9 +5,8 @@ import { Card, Title, Button } from "@/components";
 import styles from "./ProductContainer.module.scss";
 
 import testImg from "@assets/test.png";
-import testAuthor from "@assets/author.png";
 
-export const ProductContainer: FC = () => {
+export const ProductContainer: FC = (): JSX.Element => {
   return (
     <section className={styles.product}>
       <div className="container-fluid">
@@ -22,8 +21,8 @@ export const ProductContainer: FC = () => {
             name="Responsive Mobile APP"
             category="Site Template"
             price={19}
-            authorImg={testAuthor}
-            authorName="Micrsof"
+            authorAvatar="/user.png"
+            authorName="Micrsoft"
             rating={3}
           />
         </div>
