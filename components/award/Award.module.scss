@@ -1,0 +1,32 @@
+.award {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  &::after {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+}
+
+.design::after {
+  content: url("../../assets/awards/smile.png");
+}
+
+.leaf::after {
+  content: url("../../assets/awards/leaf.png");
+}
+
+.efficiency::after {
+  content: url("../../assets/awards/lightning.png");
+}
+
+.best::after {
+  content: url("../../assets/awards/best.png");
+}
+
+.result::after {
+  content: url("../../assets/awards/result.png");
+}

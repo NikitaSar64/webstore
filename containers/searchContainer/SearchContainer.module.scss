@@ -1,28 +1,37 @@
-.search{
-    background: url('../../assets/bg/search-bg.jpg');
-    min-height: 530px;
+.search {
+  background: url("../../assets/bg/search-bg.jpg");
 }
 
-.searchInner{
-    padding: 135px 0 100px;
-
-    color: #fff;
-
-    text-align: center;
+.searchHeight {
+  min-height: 530px;
 }
 
-.searchTitle{
-    margin-bottom: 10px;
+.searchInner {
+  color: #fff;
 
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 72px;
+  text-align: center;
 }
 
-.searchText{
-    margin-bottom: 50px;
+.paddingMain {
+  padding: 135px 0 100px;
+}
 
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 30px;
+.paddingRest {
+  padding: 45px 0 65px;
+}
+
+.searchTitle {
+  margin-bottom: 10px;
+
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 72px;
+}
+
+.searchText {
+  margin-bottom: 50px;
+
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
 }

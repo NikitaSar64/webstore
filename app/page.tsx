@@ -1,4 +1,4 @@
-import { Auth, Button, Layout } from "@/components";
+import { Layout } from "@/components";
 import {
   AdvantagesContainer,
   AuthorContainer,

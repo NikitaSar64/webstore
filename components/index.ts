@@ -6,3 +6,4 @@ export * from "./card/Card";
 export * from "./ui/button/Button";
 export * from "./popup/PopUp";
 export * from "./auth/Auth";
+export * from "./award/Award";

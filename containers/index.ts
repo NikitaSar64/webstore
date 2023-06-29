@@ -4,3 +4,4 @@ export * from "./trendingContainer/TrendingContainer";
 export * from "./advantages/AdvantagesContainer";
 export * from "./author/AuthorContainer";
 export * from "./tutorial/TutorialContainer";
+export * from "./detailContainer/DetailContainer";
