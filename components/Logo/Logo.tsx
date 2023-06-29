@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FC, HTMLAttributes } from "react";
+import { FC } from "react";
 
 import logo from "@assets/logo/logo.png";
 import { LogoProps } from "./Logo.props";
