@@ -7,3 +7,5 @@ export * from "./ui/button/Button";
 export * from "./popup/PopUp";
 export * from "./auth/Auth";
 export * from "./award/Award";
+export * from "./breadCrumbs/BreadCrumbs";
+export * from "./map/Map";

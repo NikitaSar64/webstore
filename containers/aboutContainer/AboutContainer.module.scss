@@ -1,0 +1,52 @@
+@import "@styles/variables.scss";
+
+.about {
+  background-color: $gray;
+
+  padding-bottom: 150px;
+}
+
+.inner {
+  border: 1px solid #dcdcdc;
+
+  background-color: #fff;
+}
+
+.innerTitle {
+  font-size: 24px;
+
+  margin: 0;
+
+  font-weight: 500;
+
+  background-color: #fff;
+
+  color: #444;
+
+  padding: 23px 27px;
+
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.outher {
+  background-color: #fff;
+
+  padding: 0 50px;
+}
+
+.outherTitle {
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #444;
+
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.outherText {
+  margin-bottom: 40px;
+
+  color: #707070;
+}

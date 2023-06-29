@@ -1,0 +1,15 @@
+@import "@styles/variables.scss";
+
+.breadCrumbs {
+  padding: 45px 0px;
+
+  font-size: 15px;
+  a {
+    font-size: 15px;
+
+    color: #b0bec5;
+  }
+  .page {
+    color: $bg;
+  }
+}

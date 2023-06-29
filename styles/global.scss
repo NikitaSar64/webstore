@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap");
 @import "./variables.scss";
 
 * {
@@ -11,6 +12,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 
+  line-height: 24px;
   font-size: 15px;
 
   margin: 0;

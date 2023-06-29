@@ -5,3 +5,6 @@ export * from "./advantages/AdvantagesContainer";
 export * from "./author/AuthorContainer";
 export * from "./tutorial/TutorialContainer";
 export * from "./detailContainer/DetailContainer";
+export * from "./errorContainer/ErrorContainer";
+export * from "./aboutContainer/AboutContainer";
+export * from "./contactContainer/ContactContainer";
