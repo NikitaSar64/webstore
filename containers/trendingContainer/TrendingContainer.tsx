@@ -34,7 +34,7 @@ export const TrandingContainer: FC = () => {
               name="Responsive Mobile APP"
               category="Site Template"
               price={19}
-              authorImg={testAuthor}
+              authorAvatar="/user.png"
               authorName="Micrsof"
               rating={1}
             />
@@ -45,7 +45,7 @@ export const TrandingContainer: FC = () => {
               name="Responsive Mobile APP"
               category="Site Template"
               price={19}
-              authorImg={testAuthor}
+              authorAvatar="/user.png"
               authorName="Micrsof"
               rating={2}
             />
@@ -56,7 +56,7 @@ export const TrandingContainer: FC = () => {
               name="Responsive Mobile APP"
               category="Site Template"
               price={19}
-              authorImg={testAuthor}
+              authorAvatar="/user.png"
               authorName="Micrsof"
               rating={3}
             />
@@ -67,7 +67,7 @@ export const TrandingContainer: FC = () => {
               name="Responsive Mobile APP"
               category="Site Template"
               price={19}
-              authorImg={testAuthor}
+              authorAvatar="/user.png"
               authorName="Micrsof"
               rating={4}
             />
@@ -78,7 +78,7 @@ export const TrandingContainer: FC = () => {
               name="Responsive Mobile APP"
               category="Site Template"
               price={19}
-              authorImg={testAuthor}
+              authorAvatar="/user.png"
               authorName="Micrsof"
               rating={5}
             />
