@@ -8,3 +8,4 @@ export * from "./detailContainer/DetailContainer";
 export * from "./errorContainer/ErrorContainer";
 export * from "./aboutContainer/AboutContainer";
 export * from "./contactContainer/ContactContainer";
+export * from "./profileContainer/ProfileContainer";

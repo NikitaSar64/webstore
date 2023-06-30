@@ -1,0 +1,24 @@
+.tabsWrapper {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.tabs {
+  width: 270px;
+}
+
+.tabPanel {
+  width: 870px;
+}
+
+.tab {
+  border: 1px solid #dcdcdc;
+
+  background-color: #fff;
+
+  border-bottom: none;
+  &:last-child {
+    border-bottom: 1px solid #dcdcdc;
+  }
+}

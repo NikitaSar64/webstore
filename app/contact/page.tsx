@@ -1,11 +1,7 @@
 import { Layout } from "@/components";
-import {
-  AboutContainer,
-  ContactContainer,
-  SearchContainer,
-} from "@/containers";
+import { ContactContainer, SearchContainer } from "@/containers";
 
-export default function CotactPage() {
+export default function ContactPage() {
   return (
     <Layout>
       <SearchContainer showTitle={false} />

@@ -7,7 +7,7 @@ import { ThemeProvider } from "@mui/material/styles";
 
 import { colorsTheme } from "./colors.theme";
 
-import { Box, Typography, Tab, Tabs as TabsMU } from "@mui/material";
+import { Box, Tab, Tabs as TabsMU } from "@mui/material";
 
 const featuresData = [
   "Printing and typesetting industry",
