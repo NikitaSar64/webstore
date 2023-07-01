@@ -101,33 +101,6 @@
 
 .social {
   margin-bottom: 33px;
-  li {
-    width: 28px;
-    height: 28px;
-
-    background-image: url("../../../assets/social/social_sprites.png");
-
-    display: inline-block;
-    & + li {
-      margin-left: 7px;
-    }
-  }
-
-  .linkedIn {
-    background-position: -28px -0;
-  }
-
-  .youTube {
-    background-position: -56px -0;
-  }
-
-  .pinterest {
-    background-position: -0 -28px;
-  }
-
-  .twitter {
-    background-position: -28px -28px;
-  }
 }
 
 .formTitle {

@@ -1,0 +1,44 @@
+@import "@styles/variables.scss";
+
+.withdrawsItem {
+  display: flex;
+  align-items: center;
+
+  height: 45px;
+
+  font-size: 13px;
+
+  color: #444;
+
+  &:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+}
+
+.date {
+  width: 155px;
+  padding-left: 20px;
+
+  font-weight: 500;
+}
+.email {
+  width: 180px;
+
+  font-weight: 500;
+}
+
+.price {
+  width: 70px;
+
+  font-weight: 700;
+}
+
+.status {
+  width: 90px;
+
+  font-weight: 700;
+}
+
+.paid {
+  color: $green;
+}

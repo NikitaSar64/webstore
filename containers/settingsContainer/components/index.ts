@@ -1,2 +1,2 @@
 export * from "./verticaltabs/VerticalTabs";
-export * from "./aboutPage/AboutPage";
+export * from "./profilePage/ProfilePage";

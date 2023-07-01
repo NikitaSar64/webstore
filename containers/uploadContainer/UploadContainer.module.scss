@@ -1,0 +1,66 @@
+@import "@styles/variables.scss";
+
+.upload {
+  background-color: $gray;
+
+  padding-bottom: 115px;
+}
+
+.line {
+  & + & {
+    margin-top: 25px;
+  }
+
+  display: flex;
+
+  padding-top: 5px;
+
+  label {
+    min-width: 175px;
+
+    padding-right: 15px;
+
+    color: #444;
+    &::after {
+      content: "*";
+      font-size: 24px;
+      color: $green;
+
+      margin-left: 7px;
+    }
+  }
+  input,
+  textarea {
+    width: 100%;
+
+    display: block;
+  }
+  textarea {
+    height: 160px;
+  }
+}
+
+.lineWrapper {
+  padding: 45px;
+}
+
+.select {
+  width: 100%;
+
+  background-color: #f1f4f5;
+}
+
+.submit {
+  color: #fff;
+
+  background-color: $green;
+
+  border: none;
+
+  padding: 15px 36px;
+
+  margin-top: 45px;
+  margin-left: 175px;
+
+  cursor: pointer;
+}

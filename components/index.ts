@@ -9,3 +9,7 @@ export * from "./auth/Auth";
 export * from "./award/Award";
 export * from "./breadCrumbs/BreadCrumbs";
 export * from "./map/Map";
+export * from "./authorCard/AuthorCard";
+export * from "./select/Select";
+export * from "./uploader/Uploader";
+export * from "./range/Range";

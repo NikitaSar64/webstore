@@ -3,13 +3,13 @@
 import { FC } from "react";
 import styles from "./DetailContainer.module.scss";
 import Image from "next/image";
-import { Award, Title } from "@/components";
+import { AuthorCard, Select, BreadCrumbs, Title } from "@/components";
 import { CardMini, Tabs } from "./components";
-import { Avatar } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import cn from "classnames";
+import { MenuItem } from "@mui/material";
 
 const data = [
   {
@@ -24,6 +24,7 @@ export const DetailContainer: FC = () => {
   return (
     <section className={styles.detailContainer}>
       <div className="container">
+        <BreadCrumbs />
         <div className={styles.detail}>
           <div className={styles.detailContent}>
             <div className={styles.imgWrapper}>
@@ -81,14 +82,14 @@ export const DetailContainer: FC = () => {
             </div>
           </div>
           <div className={styles.detailAside}>
-            <div className={styles.asideBox}>
-              <div className={styles.asideTitle}>Product Price</div>
+            <div className="aside-box">
+              <div className="aside-title">Product Price</div>
               <div className={styles.asidePrice}>
                 <span>59</span>
-                <select>
-                  <option value="regular">regular</option>
-                  <option value="premium">premium</option>
-                </select>
+                <Select className={styles.select}>
+                  <option value={"Regular"}>Regular</option>
+                  <option value={"Premium"}>Premium</option>
+                </Select>
               </div>
               <button className={cn(styles.asideBtn, styles.cart)}>
                 <FontAwesomeIcon icon={faCartShopping} />
@@ -100,28 +101,8 @@ export const DetailContainer: FC = () => {
               </button>
               <button className={styles.asideBtn}>Buy Now</button>
             </div>
-            <div className={styles.asideBox}>
-              <div className={styles.asideTitle}>Product Author</div>
-              <div className={styles.authorBox}>
-                <Avatar
-                  className={styles.authorAvatar}
-                  variant="rounded"
-                  src="/detailAvatar.png"
-                />
-                <div className={styles.authorInfo}>
-                  <div className={styles.authorName}>PsdBoss</div>
-                  <a href="#">View Profile</a>
-                </div>
-              </div>
-              <div className={styles.authorAwards}>
-                <Award type="design" />
-                <Award type="product" />
-                <Award type="efficiency" />
-                <Award type="best" />
-                <Award type="result" />
-              </div>
-            </div>
-            <div className={styles.asideBox}>
+            <AuthorCard title="Product Author" />
+            <div className="aside-box">
               <div className={styles.sales}>
                 <FontAwesomeIcon
                   icon={faCartShopping}
@@ -132,8 +113,8 @@ export const DetailContainer: FC = () => {
                 <span className={styles.salesText}>Sales</span>
               </div>
             </div>
-            <div className={styles.asideBox}>
-              <div className={styles.asideTitle}>Product Information</div>
+            <div className="aside-box">
+              <div className="aside-title">Product Information</div>
               <div className={styles.informationLine}>
                 <span>Released On:</span> 1 January, 2016
               </div>

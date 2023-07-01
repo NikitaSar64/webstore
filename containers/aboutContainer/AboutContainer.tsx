@@ -8,8 +8,8 @@ export const AboutContainer: FC = () => {
     <section className={styles.about}>
       <div className="container">
         <BreadCrumbs />
-        <div className={styles.inner}>
-          <h2 className={styles.innerTitle}>To Know Who We Are</h2>
+        <div className="inner-container">
+          <h2 className="inner-title">To Know Who We Are</h2>
           <div className={styles.outher}>
             <h4 className={styles.outherTitle}>What We Do</h4>
             <p className={styles.outherText}>

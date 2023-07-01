@@ -4,6 +4,7 @@ import styles from "./Footer.module.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import cn from "classnames";
 
 export const Footer: FC = (): JSX.Element => {
   return (
@@ -57,12 +58,12 @@ export const Footer: FC = (): JSX.Element => {
             </div>
             <div className={styles.column}>
               <div className={styles.columnTitle}>Follow Us On</div>
-              <ul className={styles.social}>
-                <li className={styles.facebook}></li>
-                <li className={styles.linkedIn}></li>
-                <li className={styles.youTube}></li>
-                <li className={styles.pinterest}></li>
-                <li className={styles.twitter}></li>
+              <ul className={cn("social", styles.social)}>
+                <li className="facebook"></li>
+                <li className="linkedIn"></li>
+                <li className="youTube"></li>
+                <li className="pinterest"></li>
+                <li className="twitter"></li>
               </ul>
               <div className={styles.formTitle}>Newsletter Sign Up!</div>
               <form action="#" className={styles.form}>

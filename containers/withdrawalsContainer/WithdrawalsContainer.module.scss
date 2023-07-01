@@ -1,0 +1,80 @@
+@import "@styles/variables.scss";
+
+.withdrawals {
+  background-color: $gray;
+
+  padding-bottom: 150px;
+}
+
+.wrapper {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.col {
+  max-width: 570px;
+  width: 100%;
+
+  height: 100%;
+}
+
+.form {
+  padding: 30px 35px 50px;
+  button {
+    border: none;
+
+    cursor: pointer;
+
+    color: #fff;
+
+    background-color: $green;
+
+    text-align: center;
+
+    padding: 15px 36px;
+
+    margin-top: 40px;
+  }
+}
+
+.formLine {
+  & + & {
+    margin-top: 25px;
+  }
+  input {
+    width: 100%;
+
+    border: 1px solid #dddddd;
+  }
+  label {
+    display: block;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+
+    color: $bg;
+    &::after {
+      content: "*";
+
+      font-size: 24px;
+
+      color: $green;
+
+      margin-left: 25px;
+    }
+  }
+}
+
+.select {
+  background-color: #f1f4f5;
+
+  width: 100%;
+}
+
+.withdrawsItems {
+  padding: 35px;
+}

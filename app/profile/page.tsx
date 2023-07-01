@@ -1,9 +1,5 @@
 import { Layout } from "@/components";
-import {
-  ContactContainer,
-  ProfileContainer,
-  SearchContainer,
-} from "@/containers";
+import { ProfileContainer, SearchContainer } from "@/containers";
 
 export default function ProfilePage() {
   return (

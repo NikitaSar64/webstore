@@ -14,9 +14,9 @@ export const ContactContainer: FC = () => {
     <section className={styles.contact}>
       <div className="container">
         <BreadCrumbs />
-        <div className={styles.inner}>
-          <h2 className={styles.innerTitle}>Contact With Us</h2>
-          <div className={styles.outher}>
+        <div className="inner-container">
+          <h2 className="inner-title">Contact With Us</h2>
+          <div className={styles.inner}>
             <Map coordinate={[-37.818244, 144.957032]} />
             <div className={styles.wrapper}>
               <div className={styles.infoBox}>
@@ -49,10 +49,21 @@ export const ContactContainer: FC = () => {
               <form className={styles.form}>
                 <div className={styles.formTitle}>Drop Us A Message </div>
                 <div className={styles.formRow}>
-                  <input type="text" name="" id="" placeholder="Name*" />
-                  <input type="text" name="" id="" placeholder="E-mail*" />
+                  <input
+                    type="text"
+                    className="basic-input"
+                    placeholder="Name*"
+                  />
+                  <input
+                    type="text"
+                    className="basic-input"
+                    placeholder="E-mail*"
+                  />
                 </div>
-                <textarea placeholder="Message*"></textarea>
+                <textarea
+                  className="basic-textarea"
+                  placeholder="Message*"
+                ></textarea>
                 <button type="submit">Send Message</button>
               </form>
             </div>

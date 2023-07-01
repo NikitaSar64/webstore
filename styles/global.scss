@@ -51,6 +51,110 @@ li {
   padding: 0 30px;
 }
 
+.aside-box {
+  padding: 30px;
+
+  max-width: 270px;
+  width: 100%;
+
+  background-color: #fff;
+
+  border: 1px solid #dcdcdc;
+}
+
+.aside-title {
+  font-size: 20px;
+  font-weight: 700;
+
+  color: $bg;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.inner-container {
+  border: 1px solid #dcdcdc;
+
+  background-color: #fff;
+}
+
+.inner-title {
+  font-size: 24px;
+
+  margin: 0;
+
+  font-weight: 500;
+
+  background-color: #fff;
+
+  color: #444;
+
+  padding: 23px 27px;
+
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.basic-input {
+  border: none;
+
+  height: 45px;
+
+  padding: 0px 20px;
+
+  background-color: #f1f4f5;
+  &::placeholder {
+    font-size: 15px;
+
+    color: #7a7a7a;
+  }
+}
+
+.basic-textarea {
+  border: none;
+
+  resize: none;
+
+  padding: 10px 20px;
+
+  background-color: #f1f4f5;
+  &::placeholder {
+    font-size: 15px;
+
+    color: #7a7a7a;
+  }
+}
+
+.social {
+  li {
+    width: 28px;
+    height: 28px;
+
+    background-image: url("/social_sprites.png");
+
+    display: inline-block;
+    & + li {
+      margin-left: 7px;
+    }
+  }
+
+  .linkedIn {
+    background-position: -28px -0;
+  }
+
+  .youTube {
+    background-position: -56px -0;
+  }
+
+  .pinterest {
+    background-position: -0 -28px;
+  }
+
+  .twitter {
+    background-position: -28px -28px;
+  }
+}
+
 .basket:hover {
   .basket-tooltip {
     height: 100%;
