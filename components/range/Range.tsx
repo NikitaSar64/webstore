@@ -1,12 +1,13 @@
 "use client";
 
-import { FC, HTMLAttributes, useState } from "react";
+import { FC } from "react";
 import styles from "./Range.module.scss";
 
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 
 import cn from "classnames";
+import { RangeProps } from "./Range.props";
 
 function valuetext(value: number) {
   return `${value}`;
@@ -14,9 +15,7 @@ function valuetext(value: number) {
 
 const minDistance = 10;
 
-export const Range: FC<HTMLAttributes<HTMLDivElement>> = ({ className }) => {
-  const [value, setValue] = useState<number[]>([0, 600]);
-
+export const Range: FC<RangeProps> = ({ range, setRange, className }) => {
   const handleChange = (
     event: Event,
     newValue: number | number[],
@@ -27,9 +26,9 @@ export const Range: FC<HTMLAttributes<HTMLDivElement>> = ({ className }) => {
     }
 
     if (activeThumb === 0) {
-      setValue([Math.min(newValue[0], value[1] - minDistance), value[1]]);
+      setRange([Math.min(newValue[0], range[1] - minDistance), range[1]]);
     } else {
-      setValue([value[0], Math.max(newValue[1], value[0] + minDistance)]);
+      setRange([range[0], Math.max(newValue[1], range[0] + minDistance)]);
     }
   };
 
@@ -37,7 +36,7 @@ export const Range: FC<HTMLAttributes<HTMLDivElement>> = ({ className }) => {
     <Box className={cn(styles.range, className)}>
       <Slider
         max={1000}
-        value={value}
+        value={range}
         onChange={handleChange}
         valueLabelDisplay="on"
         getAriaValueText={valuetext}

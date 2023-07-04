@@ -6,6 +6,16 @@
   padding-bottom: 110px;
 }
 
+.filterWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aside {
+  max-width: 270px;
+  width: 100%;
+}
+
 .asideBox {
   & + & {
     margin-top: 30px;
@@ -45,7 +55,7 @@
   margin: 35px 0;
 }
 
-.rangeBtn {
+.btn {
   color: #fff;
 
   background-color: $green;
@@ -65,5 +75,90 @@
     color: #fff;
 
     margin-right: 8px;
+  }
+}
+
+.sellers {
+  & > div {
+    margin-bottom: 30px;
+  }
+}
+
+.content {
+  max-width: 870px;
+
+  width: 100%;
+}
+
+.contentFilter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  svg {
+    cursor: pointer;
+    & + svg {
+      margin-left: 15px;
+    }
+  }
+}
+
+.filterBox {
+  display: flex;
+  align-items: center;
+}
+
+.filterOuther {
+  padding: 20px;
+
+  background-color: #fff;
+
+  border: 1px solid #dcdcdc;
+
+  margin-bottom: 30px;
+}
+
+.filterItem {
+  font-size: 30px;
+
+  color: #707070;
+}
+
+.sortItem {
+  font-size: 20px;
+
+  margin-right: 13px;
+}
+
+.itemActive {
+  color: $green;
+}
+
+.test {
+  width: 270px;
+
+  padding: 0;
+  & > div:first-child {
+    height: 180px;
+    width: 270px;
+  }
+  & > div + div {
+    padding: 20px 25px;
+  }
+  & > div:last-child {
+    border-top: 1px solid #e7ecf2;
+  }
+}
+
+.miniView {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.horizontalView {
+  & > div {
+    margin-bottom: 30px;
+
+    flex-grow: 0;
   }
 }
