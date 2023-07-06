@@ -18,6 +18,11 @@
 
   a:first-child {
     color: $red;
+
+    margin-right: 5px;
+  }
+  a:last-child {
+    margin-left: 5px;
   }
 }
 

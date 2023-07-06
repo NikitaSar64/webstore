@@ -28,6 +28,11 @@
   }
 }
 
+.userLink {
+  display: flex;
+  align-items: center;
+}
+
 .menuLink:hover {
   font-size: 14px;
 }

@@ -31,7 +31,7 @@ export const TutorialContainer: FC = () => {
     <section className={styles.tutorial}>
       <div className="container">
         <Title
-          tag="h2"
+          tag="h3"
           text="Free Monthly Tutorials To Help You With Your Project"
         />
         <div className={styles.wrapper}>

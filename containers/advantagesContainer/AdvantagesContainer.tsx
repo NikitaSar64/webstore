@@ -35,7 +35,7 @@ export const AdvantagesContainer = (): JSX.Element => {
     <section className={styles.advantages}>
       <div className="container">
         <Title
-          tag="h2"
+          tag="h3"
           text="This Week Trending Products"
           className={styles.title}
         />

@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./TutorialItem.module.scss";
 import { TutorialItemProps } from "./TutorialItem.props";
 
-import cn from "classnames";
+import Link from "next/link";
 
 export const TutorialItem = ({
   title,
@@ -10,7 +10,7 @@ export const TutorialItem = ({
   className,
 }: TutorialItemProps): JSX.Element => {
   return (
-    <div className={className}>
+    <Link href="#" className={className}>
       <div className={styles.img}>
         <Image
           src={src}
@@ -22,6 +22,6 @@ export const TutorialItem = ({
         />
       </div>
       <div className={styles.title}>{title}</div>
-    </div>
+    </Link>
   );
 };

@@ -15,8 +15,8 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useBasketStore } from "@/store/store";
 
 const testUser = {
-  name: "Mike Hussy",
-  img: "/user.png",
+  name: "Radiustheme",
+  img: "/avatar1.png",
   balance: 100,
 };
 
