@@ -26,14 +26,34 @@
   align-items: center;
 }
 
+.btn {
+  padding: 9px;
+
+  width: 72px;
+
+  border-radius: 4px;
+
+  color: #fff;
+
+  font-size: 13px;
+}
+
 .login {
   background: $green;
+}
+
+.login:hover {
+  @include btnHover($green);
 }
 
 .register {
   background: $red;
 
   margin-left: 7px;
+}
+
+.register:hover {
+  @include btnHover($red);
 }
 
 .headerMenu {
@@ -51,11 +71,35 @@
   li {
     display: inline-block;
 
-    color: #fff;
+    position: relative;
 
     & + li {
       margin-left: 30px;
     }
+    a {
+      color: #fff;
+    }
+    &::before {
+      content: "";
+
+      width: 0%;
+
+      height: 1px;
+
+      background-color: #fff;
+
+      position: absolute;
+
+      bottom: 0;
+
+      transition: width 500ms ease;
+    }
+    &:hover::before {
+      width: 100%;
+    }
+  }
+  .activeLink {
+    color: gray;
   }
 }
 

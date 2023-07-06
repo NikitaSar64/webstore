@@ -50,7 +50,9 @@
   position: relative;
 
   &::after {
-    content: url("../../assets/error/error.png");
+    content: "";
+
+    background-image: url("../../assets/error/error.png");
 
     width: 150px;
     height: 292px;
@@ -91,4 +93,96 @@
   border: 1px solid #fff;
 
   border-radius: 4px;
+
+  transition: all 500ms ease;
+  &:hover {
+    background: #fff;
+    color: $green;
+    box-shadow: inset 0 0 0 3px #fff;
+  }
+}
+
+@media (max-width: 960px) {
+  .outherStatus {
+    &::after {
+      width: 100px;
+      height: 194px;
+
+      background-size: cover;
+    }
+  }
+}
+
+@media (max-width: 840px) {
+  .outherStatus {
+    &::after {
+      width: 72px;
+      height: 140px;
+    }
+  }
+  .outherStatus {
+    font-size: 250px;
+    line-height: 250px;
+  }
+  .outherTitle {
+    font-size: 28px;
+
+    margin-bottom: 20px;
+  }
+  .outherText {
+    font-size: 16px;
+
+    margin-bottom: 40px;
+  }
+  .outherLink {
+    padding: 15px 30px;
+  }
+  .error {
+    padding-bottom: 130px;
+  }
+}
+
+@media (max-width: 740px) {
+  .outherStatus {
+    font-size: 200px;
+    line-height: 200px;
+  }
+  .outherTitle {
+    font-size: 24px;
+    line-height: 30px;
+
+    margin-bottom: 20px;
+  }
+  .outherText {
+    font-size: 15px;
+
+    margin-bottom: 40px;
+  }
+  .outherLink {
+    padding: 10px 30px;
+  }
+  .error {
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .error {
+    padding-bottom: 70px;
+  }
+  .outher {
+    padding: 70px 10px;
+  }
+  .outherStatus {
+    font-size: 120px;
+    line-height: 120px;
+    &::after {
+      background-image: none;
+
+      width: 0;
+      height: 0;
+
+      margin: 0;
+    }
+  }
 }

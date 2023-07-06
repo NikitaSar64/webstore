@@ -1,4 +1,4 @@
-import { BreadCrumbs, Select } from "@/components";
+import { BreadCrumbs, Button, Select } from "@/components";
 import { FC } from "react";
 import styles from "./WithdrawalsContainer.module.scss";
 import cn from "classnames";
@@ -65,7 +65,11 @@ export const WithdrawalsContainer: FC = () => {
                   className="basic-input"
                 />
               </div>
-              <button type="submit">Request Withdrawal</button>
+              <Button
+                text="Request Withdrawal"
+                type="submit"
+                className={styles.btn}
+              />
             </form>
           </div>
           <div className={cn("inner-container", styles.col)}>

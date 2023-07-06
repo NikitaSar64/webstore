@@ -36,7 +36,12 @@ export const TutorialContainer: FC = () => {
         />
         <div className={styles.wrapper}>
           {tutorialData.map(({ id, title, img }) => (
-            <TutorialItem key={id} title={title} src={img} />
+            <TutorialItem
+              key={id}
+              title={title}
+              src={img}
+              className={styles.tutorialItem}
+            />
           ))}
         </div>
       </div>

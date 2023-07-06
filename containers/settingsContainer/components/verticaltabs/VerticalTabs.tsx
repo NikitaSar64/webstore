@@ -43,16 +43,16 @@ export const VerticalTabs: FC = () => {
           <ProfilePage title="Personal Information" />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          Item Two
+          <div className={styles.page}>Profile</div>
         </TabPanel>
         <TabPanel value={value} index={2}>
-          Item Three
+          <div className={styles.page}>Badges</div>
         </TabPanel>
         <TabPanel value={value} index={3}>
-          Item Four
+          <div className={styles.page}>E-mail Settings</div>
         </TabPanel>
         <TabPanel value={value} index={4}>
-          Item Five
+          <div className={styles.page}>Social Network</div>
         </TabPanel>
       </Box>
     </ThemeProvider>

@@ -35,3 +35,10 @@
   font-size: 20px;
   line-height: 30px;
 }
+
+@media (max-width: 900px) {
+  .searchTitle {
+    font-size: 35px;
+    line-height: 40px;
+  }
+}

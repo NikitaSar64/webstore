@@ -1,9 +1,10 @@
 "use client";
 
-import { BreadCrumbs, Uploader } from "@/components";
+import { BreadCrumbs, Button, Uploader } from "@/components";
 import styles from "./UploadContainer.module.scss";
 import { FC } from "react";
 import { Select } from "@components/index";
+import cn from "classnames";
 
 export const UploadContainer: FC = () => {
   return (
@@ -25,7 +26,7 @@ export const UploadContainer: FC = () => {
               <div className={styles.line}>
                 <label>Product Name</label>
                 <input
-                  className="basic-input"
+                  className={cn("basic-input", styles.border)}
                   type="text"
                   placeholder="Enter your product name here ..."
                 />
@@ -33,7 +34,7 @@ export const UploadContainer: FC = () => {
               <div className={styles.line}>
                 <label>Product Description</label>
                 <textarea
-                  className="basic-textarea"
+                  className={cn("basic-textarea", styles.border)}
                   placeholder="<h1> Type your text  here </h1/>"
                 ></textarea>
               </div>
@@ -56,7 +57,7 @@ export const UploadContainer: FC = () => {
               <div className={styles.line}>
                 <label>File Dimensions</label>
                 <input
-                  className="basic-input"
+                  className={cn("basic-input", styles.border)}
                   type="text"
                   placeholder="Enter the item  dimentionss here ..."
                 />
@@ -66,7 +67,7 @@ export const UploadContainer: FC = () => {
                 <input
                   type="text"
                   placeholder="Enter Tag Here"
-                  className="basic-input"
+                  className={cn("basic-input", styles.border)}
                 />
               </div>
             </div>
@@ -77,7 +78,7 @@ export const UploadContainer: FC = () => {
                 <input
                   type="text"
                   placeholder="$00.00"
-                  className="basic-input"
+                  className={cn("basic-input", styles.border)}
                 />
               </div>
               <div className={styles.line}>
@@ -85,12 +86,10 @@ export const UploadContainer: FC = () => {
                 <input
                   type="text"
                   placeholder="$00.00"
-                  className="basic-input"
+                  className={cn("basic-input", styles.border)}
                 />
               </div>
-              <button className={styles.submit} type="submit">
-                Submit
-              </button>
+              <Button text="Submit" className={styles.submit} type="submit" />
             </div>
           </form>
         </div>

@@ -1,11 +1,17 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Auth, Logo, PopUp } from "@components/index";
-import { Button, Notification } from "./ui";
+import { Notification } from "./ui";
+import { Button } from "@components/index";
 
 import styles from "./Header.module.scss";
 import { Menu, User } from "./components";
+
+import cn from "classnames";
+import Link from "next/link";
+import ROUTES from "@/routes/routes";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const testUser = {
   name: "Mike Hussy",
@@ -15,6 +21,16 @@ const testUser = {
 
 export const Header: FC = (): JSX.Element => {
   const [popUpActive, setPopUpActive] = useState<boolean>(false);
+  const pathName = usePathname();
+  const params = useSearchParams();
+
+  useEffect(() => {
+    if (popUpActive) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [popUpActive]);
 
   return (
     <header>
@@ -35,13 +51,19 @@ export const Header: FC = (): JSX.Element => {
               <Notification type="message" count={5} />
               <Notification type="basket" count={3} />
               <User userData={testUser} />
-              <Button
+              {/* <Button
                 text="Login"
-                className={styles.login}
+                className={cn(styles.btn, styles.login)}
                 onClick={() => setPopUpActive(true)}
               />
-              <Button text="Register" className={styles.register} />
-              <Button text="Logout" className={styles.register} />
+              <Button
+                text="Register"
+                className={cn(styles.btn, styles.register)}
+              /> */}
+              <Button
+                text="Logout"
+                className={cn(styles.btn, styles.register)}
+              />
             </div>
           </div>
         </div>
@@ -50,16 +72,97 @@ export const Header: FC = (): JSX.Element => {
         <div className="container">
           <nav className={styles.menu}>
             <ul className={styles.menuList}>
-              <li>Home</li>
-              <li>About</li>
-              <li>WordPress</li>
-              <li>Joomla</li>
-              <li>PSD</li>
-              <li>Plugins</li>
-              <li>Components</li>
-              <li>Pages</li>
-              <li>Contact</li>
-              <li>Help</li>
+              <li>
+                <Link
+                  href={ROUTES.main.createRoute()}
+                  className={cn({ [styles.activeLink]: pathName == "/" })}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={ROUTES.about.createRoute()}
+                  className={cn({ [styles.activeLink]: pathName == "/about" })}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={cn({
+                    [styles.activeLink]: params.get("category") == "WordPress",
+                  })}
+                  href={{
+                    pathname: ROUTES.products.createRoute(),
+                    query: { category: "WordPress" },
+                  }}
+                >
+                  WordPress
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={cn({
+                    [styles.activeLink]: params.get("category") == "Joomla",
+                  })}
+                  href={{
+                    pathname: ROUTES.products.createRoute(),
+                    query: { category: "Joomla" },
+                  }}
+                >
+                  Joomla
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={cn({
+                    [styles.activeLink]: params.get("category") == "PSD",
+                  })}
+                  href={{
+                    pathname: ROUTES.products.createRoute(),
+                    query: { category: "PSD" },
+                  }}
+                >
+                  PSD
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={cn({
+                    [styles.activeLink]: params.get("category") == "Plugins",
+                  })}
+                  href={{
+                    pathname: ROUTES.products.createRoute(),
+                    query: { category: "Plugins" },
+                  }}
+                >
+                  Plugins
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={cn({
+                    [styles.activeLink]: params.get("category") == "Components",
+                  })}
+                  href={{
+                    pathname: ROUTES.products.createRoute(),
+                    query: { category: "Components" },
+                  }}
+                >
+                  Components
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={ROUTES.contact.createRoute()}
+                  className={cn({
+                    [styles.activeLink]: pathName == "/contact",
+                  })}
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>

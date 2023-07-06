@@ -1,6 +1,6 @@
 "use client";
 
-import { BreadCrumbs, Card, Range } from "@/components";
+import { BreadCrumbs, Button, Card, Range } from "@/components";
 import {
   faAngleRight,
   faArrowDownShortWide,
@@ -15,53 +15,12 @@ import styles from "./FilterContainer.module.scss";
 
 import cn from "classnames";
 
-import testImg from "@assets/test.png";
 import { CardProps } from "@/components/card/Card.props";
 import { FilterMenu } from "./components";
 import { getSortedProducts } from "@/helpers/getSortProducts";
+import { useSearchParams } from "next/navigation";
 
-const cardData: CardProps[] = [
-  {
-    productImg: testImg,
-    name: "Responsive Mobile APP",
-    category: "Site Template",
-    description: "Pimply dummy text of the printing and typesetting industry.",
-    price: 190,
-    authorAvatar: "/user.png",
-    authorName: "Micrsoft",
-    rating: 3,
-  },
-  {
-    productImg: testImg,
-    name: "Aesponsive Mobile APP",
-    category: "WordPress",
-    description: "Pimply dummy text of the printing and typesetting industry.",
-    price: 250,
-    authorAvatar: "/user.png",
-    authorName: "Micrsoft",
-    rating: 3,
-  },
-  {
-    productImg: testImg,
-    name: "Cartoon Face",
-    category: "Illsatration",
-    description: "Pimply dummy text of the printing and typesetting industry.",
-    price: 100,
-    authorAvatar: "/user.png",
-    authorName: "Micrsoft",
-    rating: 3,
-  },
-  {
-    productImg: testImg,
-    name: "Cartoon Face1",
-    category: "WordPress",
-    description: "Pimply dummy text of the printing and typesetting industry.",
-    price: 110,
-    authorAvatar: "/user.png",
-    authorName: "Micrsoft",
-    rating: 3,
-  },
-];
+import { cardData } from "../productContainer/ProductContainer";
 
 const sortedFields = [
   { sortField: "name", textFiled: "Sort by: Name" },
@@ -69,7 +28,8 @@ const sortedFields = [
 ];
 
 export const FilterContainer: FC = () => {
-  const [activeCategory, setActiveCategory] = useState("");
+  const params = useSearchParams();
+  const [activeCategory, setActiveCategory] = useState(params.get("category"));
   const [view, setView] = useState<CardProps["type"]>("horizontal");
   const [sort, setSort] = useState({
     descOrAsc: true,
@@ -102,6 +62,28 @@ export const FilterContainer: FC = () => {
     }
   };
 
+  const sortByRangePrice = () => {
+    const sortedProducts = getSortedProducts(
+      cardData,
+      sort.descOrAsc,
+      sort.sortBy
+    ).filter((product) => {
+      if (product.price >= range[0] && product.price <= range[1]) {
+        return product;
+      }
+    });
+
+    setProducts(sortedProducts);
+  };
+
+  useEffect(() => {
+    if (window.innerWidth <= 800) {
+      setView("vertical");
+    } else {
+      setView("horizontal");
+    }
+  }, []);
+
   useEffect(() => {
     const sortedProducts = getSortedProducts(
       products,
@@ -119,19 +101,19 @@ export const FilterContainer: FC = () => {
     });
   }, [selectedIndex]);
 
-  const sortByRangePrice = () => {
+  useEffect(() => {
     const sortedProducts = getSortedProducts(
       cardData,
       sort.descOrAsc,
       sort.sortBy
-    ).filter((product) => {
-      if (product.price >= range[0] && product.price <= range[1]) {
-        return product;
-      }
-    });
+    );
 
-    setProducts(sortedProducts);
-  };
+    setProducts([
+      ...sortedProducts.filter((card) => card.category == activeCategory),
+    ]);
+
+    setActiveCategory(params.get("category"));
+  }, [params.get("category")]);
 
   return (
     <section className={styles.filter}>
@@ -203,14 +185,14 @@ export const FilterContainer: FC = () => {
                 range={range}
                 setRange={setRange}
               />
-              <button
+              <Button
+                text="Search"
                 className={styles.btn}
                 type="button"
                 onClick={sortByRangePrice}
               >
                 <FontAwesomeIcon icon={faSearch} />
-                Search
-              </button>
+              </Button>
             </div>
             <div className={cn("aside-box", styles.asideBox, styles.sellers)}>
               <div className="aside-title">Top 10 Sellers</div>
@@ -218,20 +200,17 @@ export const FilterContainer: FC = () => {
                 return (
                   <Card
                     key={index}
-                    productImg={card.productImg}
-                    name={card.name}
-                    category={card.category}
-                    price={card.price}
-                    authorAvatar={card.authorAvatar}
-                    authorName={card.authorName}
-                    rating={card.rating}
-                    type="mini"
+                    cardData={card}
+                    ratingShow={false}
+                    className={styles.bestSellers}
                   />
                 );
               })}
-              <button className={styles.btn} type="button">
-                View All
-              </button>
+              <Button
+                text="View All"
+                className={styles.btn}
+                type="button"
+              ></Button>
             </div>
           </div>
           <div className={styles.content}>
@@ -260,9 +239,9 @@ export const FilterContainer: FC = () => {
                   <FontAwesomeIcon
                     icon={faGrip}
                     className={cn(styles.filterItem, {
-                      [styles.itemActive]: view == "mini",
+                      [styles.itemActive]: view == "vertical",
                     })}
-                    onClick={() => setView("mini")}
+                    onClick={() => setView("vertical")}
                   />
                   <FontAwesomeIcon
                     icon={faGripLines}
@@ -276,7 +255,7 @@ export const FilterContainer: FC = () => {
             </div>
             <div
               className={cn({
-                [styles.miniView]: view == "mini",
+                [styles.miniView]: view == "vertical",
                 [styles.horizontalView]: view == "horizontal",
               })}
             >
@@ -284,16 +263,9 @@ export const FilterContainer: FC = () => {
                 return (
                   <Card
                     key={index}
-                    productImg={card.productImg}
-                    name={card.name}
-                    category={card.category}
-                    price={card.price}
-                    description={card.description}
-                    authorAvatar={card.authorAvatar}
-                    authorName={card.authorName}
-                    rating={card.rating}
+                    cardData={card}
+                    className={styles.card}
                     type={view}
-                    className={styles.test}
                   />
                 );
               })}

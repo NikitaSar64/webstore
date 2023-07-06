@@ -55,12 +55,42 @@
 
   background-color: $green;
 
-  border: none;
-
   padding: 15px 36px;
 
   margin-top: 45px;
   margin-left: 175px;
+}
 
-  cursor: pointer;
+.submit:hover {
+  @include btnHover($green);
+}
+
+.border {
+  border: 1px solid #d7d7d7;
+}
+
+@media (max-width: 800px) {
+  .line {
+    display: block;
+    label {
+      display: inline-block;
+
+      margin-bottom: 5px;
+    }
+  }
+  .submit {
+    margin-left: 0;
+  }
+  .upload {
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .upload {
+    padding-bottom: 70px;
+  }
+  .lineWrapper {
+    padding: 23px 27px;
+  }
 }

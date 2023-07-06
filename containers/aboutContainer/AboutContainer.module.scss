@@ -28,3 +28,37 @@
 
   color: #707070;
 }
+
+@media (max-width: 840px) {
+  .about {
+    padding-bottom: 130px;
+  }
+  .outher {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 740px) {
+  .about {
+    padding-bottom: 100px;
+  }
+  .outher {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    padding-bottom: 70px;
+    h2 {
+      padding: 18px 22px;
+    }
+  }
+  .outher {
+    padding: 0 20px;
+  }
+  .outherTitle {
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+}

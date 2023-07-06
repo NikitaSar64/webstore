@@ -14,6 +14,7 @@
 
 .col {
   max-width: 570px;
+
   width: 100%;
 
   height: 100%;
@@ -21,21 +22,19 @@
 
 .form {
   padding: 30px 35px 50px;
-  button {
-    border: none;
-
-    cursor: pointer;
-
+  .btn {
     color: #fff;
 
     background-color: $green;
-
-    text-align: center;
 
     padding: 15px 36px;
 
     margin-top: 40px;
   }
+}
+
+.btn:hover {
+  @include btnHover($green);
 }
 
 .formLine {
@@ -77,4 +76,33 @@
 
 .withdrawsItems {
   padding: 35px;
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    display: block;
+  }
+  .col {
+    max-width: 100%;
+
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  .withdrawsItems,
+  .form {
+    padding: 30px 10px;
+  }
+  .withdrawsItems {
+    overflow-x: scroll;
+  }
+  .withdrawals {
+    padding-bottom: 70px;
+  }
+  .col {
+    h2 {
+      padding: 23px 10px;
+    }
+  }
 }

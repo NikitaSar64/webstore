@@ -2,10 +2,11 @@ import { FC } from "react";
 import styles from "./CardMini.module.scss";
 import { CardMiniProps } from "./CardMini.props";
 import Image from "next/image";
+import Link from "next/link";
 
 export const CardMini: FC<CardMiniProps> = ({ data }) => {
   return (
-    <div className={styles.cardMini}>
+    <Link href="#" className={styles.cardMini}>
       <div className={styles.img}>
         <Image
           src={data.img}
@@ -19,6 +20,6 @@ export const CardMini: FC<CardMiniProps> = ({ data }) => {
         <div className={styles.category}>{data.category}</div>
         <div className={styles.price}>{data.price}</div>
       </div>
-    </div>
+    </Link>
   );
 };

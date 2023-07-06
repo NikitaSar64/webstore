@@ -7,7 +7,7 @@ import { ThemeProvider } from "@mui/material/styles";
 
 import { colorsTheme } from "./colors.theme";
 
-import { Box, Tab, Tabs as TabsMU } from "@mui/material";
+import { Box, Tab, Tabs as TabsMU, useMediaQuery } from "@mui/material";
 
 const featuresData = [
   "Printing and typesetting industry",
@@ -30,6 +30,7 @@ const TabPanel: FC<TabPanelProps> = ({ children, index, value }) => {
 
 export const Tabs: FC<TabsProps> = () => {
   const [value, setValue] = useState(0);
+  const isMobile = useMediaQuery("(max-width: 600px)");
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -40,10 +41,12 @@ export const Tabs: FC<TabsProps> = () => {
       <Box sx={{ width: "100%" }}>
         <Box className={styles.tabsBox}>
           <TabsMU
+            className={styles.tabs}
             value={value}
             onChange={handleChange}
             textColor="primary"
             indicatorColor="secondary"
+            orientation={isMobile ? "vertical" : "horizontal"}
           >
             <Tab label="Item Features" className={styles.tab} />
             <Tab label="Comments" className={styles.tab} />

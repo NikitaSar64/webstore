@@ -95,6 +95,11 @@ li {
   border-bottom: 1px solid #dcdcdc;
 }
 
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 .basic-input {
   border: none;
 
@@ -191,5 +196,17 @@ li {
 @media (max-width: 720px) {
   .container-fluid {
     padding: 0 15px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    padding: 0 8px;
   }
 }

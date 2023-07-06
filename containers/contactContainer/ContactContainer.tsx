@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./ContactContainer.module.scss";
-import { BreadCrumbs } from "@/components";
+import { BreadCrumbs, Button } from "@/components";
 import { Map } from "@/components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -64,7 +64,11 @@ export const ContactContainer: FC = () => {
                   className="basic-textarea"
                   placeholder="Message*"
                 ></textarea>
-                <button type="submit">Send Message</button>
+                <Button
+                  text="Send Message"
+                  type="submit"
+                  className={styles.btn}
+                />
               </form>
             </div>
           </div>

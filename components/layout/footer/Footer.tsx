@@ -5,6 +5,8 @@ import styles from "./Footer.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import cn from "classnames";
+import ROUTES from "@/routes/routes";
+import Link from "next/link";
 
 export const Footer: FC = (): JSX.Element => {
   return (
@@ -39,31 +41,61 @@ export const Footer: FC = (): JSX.Element => {
             <div className={styles.columnMenu}>
               <div className={styles.columnTitle}>Join Our Community</div>
               <ul className={styles.columnList}>
-                <li>Home</li>
-                <li>Forums</li>
-                <li>Become an Author</li>
-                <li>Community Meetups</li>
-                <li>Become an Affiliate</li>
+                <li>
+                  <Link href={ROUTES.main.createRoute()}>Home</Link>
+                </li>
+                <li>
+                  <Link href="#">Forums</Link>
+                </li>
+                <li>
+                  <Link href="#">Become an Author</Link>
+                </li>
+                <li>
+                  <Link href="#">Community Meetups</Link>
+                </li>
+                <li>
+                  <Link href="#">Become an Affiliate</Link>
+                </li>
               </ul>
             </div>
             <div className={styles.columnMenu}>
               <div className={styles.columnTitle}>Need Help?</div>
               <ul className={styles.columnList}>
-                <li>Help Center</li>
-                <li>Foxtar Market Terms</li>
-                <li>Author Terms</li>
-                <li>Foxtar Licenses</li>
-                <li>Contact Us</li>
+                <li>
+                  <Link href="#">Help Center</Link>
+                </li>
+                <li>
+                  <Link href="#">Foxtar Market Terms</Link>
+                </li>
+                <li>
+                  <Link href="#">Author Terms</Link>
+                </li>
+                <li>
+                  <Link href="#">Foxtar Licenses</Link>
+                </li>
+                <li>
+                  <Link href={ROUTES.contact.createRoute()}>Contact Us</Link>
+                </li>
               </ul>
             </div>
             <div className={styles.column}>
               <div className={styles.columnTitle}>Follow Us On</div>
               <ul className={cn("social", styles.social)}>
-                <li className="facebook"></li>
-                <li className="linkedIn"></li>
-                <li className="youTube"></li>
-                <li className="pinterest"></li>
-                <li className="twitter"></li>
+                <li className="facebook">
+                  <Link href="#" />
+                </li>
+                <li className="linkedIn">
+                  <Link href="#" />
+                </li>
+                <li className="youTube">
+                  <Link href="#" />
+                </li>
+                <li className="pinterest">
+                  <Link href="#" />
+                </li>
+                <li className="twitter">
+                  <Link href="#" />
+                </li>
               </ul>
               <div className={styles.formTitle}>Newsletter Sign Up!</div>
               <form action="#" className={styles.form}>

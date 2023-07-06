@@ -1,7 +1,8 @@
 import { StaticImageData } from "next/image";
 import { HTMLAttributes } from "react";
 
-export interface CardProps extends HTMLAttributes<HTMLDivElement> {
+interface ICard {
+  id: number;
   name: string;
   category: string;
   description?: string;
@@ -10,6 +11,12 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   authorAvatar: string;
   authorName: string;
   rating: number;
-  type?: "horizontal" | "vertical" | "mini";
   [key: string]: any;
+}
+
+export interface CardProps extends HTMLAttributes<HTMLDivElement> {
+  cardData: ICard;
+  type?: "horizontal" | "vertical";
+  [key: string]: any;
+  ratingShow?: boolean;
 }

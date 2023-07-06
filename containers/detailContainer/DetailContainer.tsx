@@ -3,24 +3,58 @@
 import { FC } from "react";
 import styles from "./DetailContainer.module.scss";
 import Image from "next/image";
-import { AuthorCard, Select, BreadCrumbs, Title } from "@/components";
+import { AuthorCard, Select, BreadCrumbs, Title, Button } from "@/components";
 import { CardMini, Tabs } from "./components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faHeart } from "@fortawesome/free-solid-svg-icons";
-
 import cn from "classnames";
-import { MenuItem } from "@mui/material";
+import { usePathname } from "next/navigation";
+
+import { cardData } from "../productContainer/ProductContainer";
 
 const data = [
   {
     name: "Grand Ballet - Dance",
     category: "PSD Template",
     price: 12,
-    img: "/mini.png",
+    img: "/mini1.png",
+  },
+  {
+    name: "Grand Ballet - Dance",
+    category: "PSD Template",
+    price: 59,
+    img: "/mini2.png",
+  },
+  {
+    name: "Grand Ballet - Dance",
+    category: "PSD Template",
+    price: 48,
+    img: "/mini3.png",
+  },
+  {
+    name: "Grand Ballet - Dance",
+    category: "PSD Template",
+    price: 18,
+    img: "/mini4.png",
+  },
+  {
+    name: "Grand Ballet - Dance",
+    category: "PSD Template",
+    price: 29,
+    img: "/mini5.png",
+  },
+  {
+    name: "Grand Ballet - Dance",
+    category: "PSD Template",
+    price: 18,
+    img: "/mini6.png",
   },
 ];
 
 export const DetailContainer: FC = () => {
+  const [id] = usePathname().split("/").slice(-1);
+  const product = cardData[+id - 1];
+
   return (
     <section className={styles.detailContainer}>
       <div className="container">
@@ -30,25 +64,15 @@ export const DetailContainer: FC = () => {
             <div className={styles.imgWrapper}>
               <div className={styles.img}>
                 <Image
-                  src="/details.png"
+                  src={product.productImg}
                   fill
                   alt="product-img"
                   style={{ objectFit: "cover" }}
                 />
               </div>
             </div>
-            <Title
-              tag="h4"
-              className={styles.title}
-              text="GTBuilder - Construction & Building WordPress Theme"
-            />
-            <p className={styles.text}>
-              Bmply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry standard dummy text ever since the
-              1500s, when an unknown printer took a galley of type and scrambled
-              it to make a type specimen book. It has survived noning
-              essentially unchanged.
-            </p>
+            <Title tag="h4" className={styles.title} text={product.name} />
+            <p className={styles.text}>{product.description}</p>
             <div className={styles.box}>
               <div className={styles.links}>
                 <a className={styles.link} href="#">
@@ -70,14 +94,13 @@ export const DetailContainer: FC = () => {
             </div>
             <Tabs />
             <div className={styles.more}>
-              <div className={styles.moreTitle}>More Product by PsdBosS</div>
+              <div className={styles.moreTitle}>
+                More Product by {product.authorName}
+              </div>
               <div className={styles.moreProducts}>
-                <CardMini data={data[0]} />
-                <CardMini data={data[0]} />
-                <CardMini data={data[0]} />
-                <CardMini data={data[0]} />
-                <CardMini data={data[0]} />
-                <CardMini data={data[0]} />
+                {data.map((card, index) => (
+                  <CardMini key={index} data={card} />
+                ))}
               </div>
             </div>
           </div>
@@ -85,23 +108,38 @@ export const DetailContainer: FC = () => {
             <div className="aside-box">
               <div className="aside-title">Product Price</div>
               <div className={styles.asidePrice}>
-                <span>59</span>
+                <span>{product.price} $</span>
                 <Select className={styles.select}>
                   <option value={"Regular"}>Regular</option>
                   <option value={"Premium"}>Premium</option>
                 </Select>
               </div>
-              <button className={cn(styles.asideBtn, styles.cart)}>
+              <Button
+                text="Add To Cart"
+                type="button"
+                className={cn(styles.asideBtn, styles.cart)}
+              >
                 <FontAwesomeIcon icon={faCartShopping} />
-                Add To Cart
-              </button>
-              <button className={cn(styles.asideBtn, styles.favourites)}>
+              </Button>
+              <Button
+                text="Add To Favourites"
+                type="button"
+                className={cn(styles.asideBtn, styles.favourites)}
+              >
                 <FontAwesomeIcon icon={faHeart} />
-                Add To Favourites
-              </button>
-              <button className={styles.asideBtn}>Buy Now</button>
+              </Button>
+              <Button
+                text="Buy Now"
+                type="button"
+                className={cn(styles.asideBtn, styles.buy)}
+              />
             </div>
-            <AuthorCard title="Product Author" />
+            <AuthorCard
+              userId={product.id}
+              title="Product Author"
+              avatar={product.authorAvatar}
+              name={product.authorName}
+            />
             <div className="aside-box">
               <div className={styles.sales}>
                 <FontAwesomeIcon

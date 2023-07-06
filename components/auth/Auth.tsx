@@ -10,9 +10,7 @@ import cn from "classnames";
 export const Auth: FC = (): JSX.Element => {
   const { register, handleSubmit } = useForm<AuthField>();
 
-  const onSubmit: SubmitHandler<AuthField> = (data) => {
-    //console.log(data.login);
-  };
+  const onSubmit: SubmitHandler<AuthField> = (data) => {};
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>

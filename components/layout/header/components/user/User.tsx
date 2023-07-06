@@ -4,6 +4,8 @@ import { FC } from "react";
 import styles from "./User.module.scss";
 import { UserProps } from "./User.props";
 import { Avatar } from "@mui/material";
+import Link from "next/link";
+import ROUTES from "@/routes/routes";
 
 export const User: FC<UserProps> = ({ userData }): JSX.Element => {
   return (
@@ -15,14 +17,58 @@ export const User: FC<UserProps> = ({ userData }): JSX.Element => {
       </div>
       <div className={styles.menu}>
         <ul>
-          <li>Profile Page</li>
-          <li>Portfolio</li>
-          <li>Account Setting</li>
-          <li>Downloads</li>
-          <li>Wishlist</li>
-          <li>Upload Item</li>
-          <li>Statement</li>
-          <li>Withdraws</li>
+          <li>
+            <Link
+              href={ROUTES.profile.createRoute()}
+              className={styles.menuLink}
+            >
+              Profile Page
+            </Link>
+          </li>
+          <li>
+            <Link href="#" className={styles.menuLink}>
+              Portfolio
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={ROUTES.settings.createRoute()}
+              className={styles.menuLink}
+            >
+              Account Setting
+            </Link>
+          </li>
+          <li>
+            <Link href="#" className={styles.menuLink}>
+              Downloads
+            </Link>
+          </li>
+          <li>
+            <Link href="#" className={styles.menuLink}>
+              Wishlist
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={ROUTES.upload.createRoute()}
+              className={styles.menuLink}
+            >
+              Upload Item
+            </Link>
+          </li>
+          <li>
+            <Link href="#" className={styles.menuLink}>
+              Statement
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={ROUTES.withdrawals.createRoute()}
+              className={styles.menuLink}
+            >
+              Withdraws
+            </Link>
+          </li>
           <li className={styles.logout}>Logout</li>
         </ul>
       </div>

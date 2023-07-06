@@ -23,6 +23,15 @@
 
 .social {
   margin: 30px 0;
+  a {
+    height: 28px;
+    width: 28px;
+
+    transition: box-shadow 500ms ease;
+  }
+  a:hover {
+    box-shadow: 4px 4px 4px 0px rgba(9, 9, 9, 0.25);
+  }
 }
 
 .btn {
@@ -38,8 +47,6 @@
 
   padding: 18px;
 
-  border: none;
-
   box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
 }
 
@@ -52,8 +59,16 @@
   }
 }
 
+.send:hover {
+  @include btnHover($color-text);
+}
+
 .following {
   background-color: $green;
+}
+
+.following:hover {
+  @include btnHover($green);
 }
 
 .content {
@@ -111,5 +126,51 @@
 .rating {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 7px;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    flex-direction: column;
+  }
+  .content {
+    order: -1;
+
+    margin-bottom: 20px;
+  }
+  .aside {
+    max-width: 100%;
+  }
+  .author {
+    max-width: 100%;
+  }
+  .profile {
+    padding-bottom: 100px;
+  }
+}
+
+@media (max-width: 650px) {
+  .bannerWrapper {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .profileItems {
+    display: block;
+  }
+  .profileItem {
+    width: 100%;
+    & + & {
+      border-top: 1px solid #d7d7d7;
+      border-left: none;
+    }
+  }
+  .profileBanner {
+    margin-bottom: 20px;
+  }
+  .profile {
+    padding-bottom: 70px;
+  }
 }

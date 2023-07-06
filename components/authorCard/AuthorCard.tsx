@@ -5,21 +5,36 @@ import { Award } from "@components/index";
 import { FC } from "react";
 import styles from "./AuthorCard.module.scss";
 import { AuthorCardProps } from "./AuthorCard.props";
+import cn from "classnames";
+import Link from "next/link";
+import ROUTES from "@/routes/routes";
 
-export const AuthorCard: FC<AuthorCardProps> = ({ title, view = true }) => {
+export const AuthorCard: FC<AuthorCardProps> = ({
+  title,
+  avatar,
+  name,
+  userId,
+  view = true,
+  className,
+}) => {
   return (
-    <div className="aside-box">
+    <div className={cn("aside-box", className)}>
       <div className="aside-title">{title}</div>
       <div className={styles.authorBox}>
         <Avatar
           className={styles.authorAvatar}
           variant="rounded"
-          src="/detailAvatar.png"
+          src={avatar}
         />
         <div className={styles.authorInfo}>
-          <div className={styles.authorName}>PsdBoss</div>
+          <div className={styles.authorName}>{name}</div>
           {view ? (
-            <a href="#">View Profile</a>
+            <Link
+              href={ROUTES.profile.createRoute(userId)}
+              className={styles.profileLink}
+            >
+              View Profile
+            </Link>
           ) : (
             <a href="#" className={styles.status}>
               Online

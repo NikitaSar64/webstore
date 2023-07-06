@@ -18,7 +18,37 @@
   background-color: #fff;
 
   border-bottom: none;
+
+  transition: color 500ms ease;
   &:last-child {
     border-bottom: 1px solid #dcdcdc;
+  }
+  &:hover {
+    color: #263238;
+  }
+}
+
+.page {
+  background-color: #fff;
+
+  border: 1px solid #dcdcdc;
+
+  padding: 25px 36px;
+}
+
+@media (max-width: 1200px) {
+  .tabsWrapper {
+    display: block;
+  }
+  .tabs {
+    margin-bottom: 30px;
+
+    width: 100%;
+  }
+  .tab {
+    max-width: 100%;
+  }
+  .tabPanel {
+    width: 100%;
   }
 }

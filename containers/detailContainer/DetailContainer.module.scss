@@ -4,6 +4,12 @@
   background-color: $gray;
 }
 
+.detailContainer {
+  a {
+    transition: all 500ms ease;
+  }
+}
+
 .detail {
   padding-bottom: 100px;
 
@@ -24,7 +30,7 @@
   align-items: center;
   justify-content: center;
 
-  padding: 16px 0;
+  padding: 16px;
 }
 
 .img {
@@ -75,12 +81,21 @@
   }
   &:nth-of-type(1) {
     background-color: $red;
+    &:hover {
+      background: #be1f0e;
+    }
   }
   &:nth-of-type(2) {
     background-color: #455a64;
+    &:hover {
+      background: #23282a;
+    }
   }
   &:nth-of-type(3) {
     background-color: $green;
+    &:hover {
+      background: #4a820a;
+    }
   }
 }
 
@@ -91,7 +106,7 @@
 
     position: relative;
     & + a {
-      margin-left: 3px;
+      margin-left: 10px;
     }
     &::before {
       position: absolute;
@@ -99,6 +114,9 @@
       left: 50%;
 
       transform: translate(-53%, -50%);
+    }
+    &:hover {
+      box-shadow: 4px 4px 4px 0px rgba(9, 9, 9, 0.25);
     }
   }
 }
@@ -195,8 +213,6 @@
 
   box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
 
-  border: none;
-
   background-color: $color-text;
 
   color: #fff;
@@ -206,11 +222,8 @@
 
   width: 100%;
 
-  text-align: center;
-
   padding: 17px 5px;
 
-  cursor: pointer;
   svg {
     margin-right: 8px;
   }
@@ -220,8 +233,20 @@
   background-color: $green;
 }
 
+.cart:hover {
+  @include btnHover($green);
+}
+
 .favourites {
   background-color: #42a5f5;
+}
+
+.favourites:hover {
+  @include btnHover(#42a5f5);
+}
+
+.buy:hover {
+  @include btnHover($color-text);
 }
 
 .salesCount {
@@ -251,5 +276,55 @@
     color: $bg;
 
     font-weight: 500;
+  }
+}
+
+@media (max-width: 1200px) {
+  .detail {
+    display: block;
+  }
+  .detailContent {
+    max-width: 100%;
+  }
+  .img {
+    max-width: 100%;
+  }
+  .detailAside {
+    margin-top: 55px;
+    & > div {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .box {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 550px) {
+  .links {
+    width: 100%;
+  }
+  .link {
+    width: 100%;
+    & + & {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+  .socials {
+    margin-top: 20px;
+  }
+  .img {
+    max-height: 322px;
+  }
+  .detail {
+    padding-bottom: 70px;
   }
 }

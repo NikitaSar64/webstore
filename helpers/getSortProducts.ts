@@ -1,33 +1,36 @@
 import { CardProps } from "@/components/card/Card.props";
 
 export const getSortedProducts = (
-  productsData: CardProps[],
+  productsData: CardProps["cardData"][],
   descOrAsc: boolean,
   sortField: string
-): CardProps[] => {
+) => {
   let sortedProductData = [];
 
-  if (descOrAsc) {
-    if (typeof productsData[0][sortField] === "string") {
-      sortedProductData = productsData.sort((a, b) =>
-        a[sortField].localeCompare(b[sortField])
-      );
-    } else {
-      sortedProductData = productsData.sort(
-        (a, b) => b[sortField] - a[sortField]
-      );
-    }
+  if (productsData.length == 0) {
+    return productsData;
   } else {
-    if (typeof productsData[0][sortField] === "string") {
-      sortedProductData = productsData.sort((a, b) =>
-        b[sortField].localeCompare(a[sortField])
-      );
+    if (descOrAsc) {
+      if (typeof productsData[0][sortField] === "string") {
+        sortedProductData = productsData.sort((a, b) =>
+          a[sortField].localeCompare(b[sortField])
+        );
+      } else {
+        sortedProductData = productsData.sort(
+          (a, b) => b[sortField] - a[sortField]
+        );
+      }
     } else {
-      sortedProductData = productsData.sort(
-        (a, b) => a[sortField] - b[sortField]
-      );
+      if (typeof productsData[0][sortField] === "string") {
+        sortedProductData = productsData.sort((a, b) =>
+          b[sortField].localeCompare(a[sortField])
+        );
+      } else {
+        sortedProductData = productsData.sort(
+          (a, b) => a[sortField] - b[sortField]
+        );
+      }
     }
+    return sortedProductData;
   }
-
-  return sortedProductData;
 };

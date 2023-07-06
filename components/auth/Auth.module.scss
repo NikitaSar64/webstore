@@ -41,7 +41,7 @@
   label:nth-of-type(2) {
     position: relative;
     &::before {
-      content: url("../../assets/icons/lock.svg");
+      content: url("../../assets/icons/lock-small.svg");
 
       position: absolute;
       top: 10px;
@@ -113,4 +113,18 @@
   margin-bottom: 40px;
 
   color: #fff;
+}
+
+@media (max-width: 500px) {
+  .form {
+    padding: 0 15px;
+  }
+  .createBtn {
+    width: 100%;
+  }
+  .submitBtn {
+    width: 100%;
+
+    margin-right: 0;
+  }
 }

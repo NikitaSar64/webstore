@@ -56,15 +56,9 @@
 }
 
 .btn {
-  color: #fff;
-
   background-color: $green;
 
-  text-align: center;
-
-  cursor: pointer;
-
-  border: none;
+  color: #fff;
 
   width: 100%;
 
@@ -72,9 +66,18 @@
 
   font-weight: 500;
   svg {
+    transition: all 500ms ease;
+
     color: #fff;
 
     margin-right: 8px;
+  }
+}
+
+.btn:hover {
+  @include btnHover($green);
+  svg {
+    color: $green;
   }
 }
 
@@ -133,32 +136,136 @@
   color: $green;
 }
 
-.test {
-  width: 270px;
+.card {
+  flex-basis: calc(33.3% - 30px);
 
   padding: 0;
+
+  flex-grow: 0;
+
+  border: 1px solid #e7ecf2;
+
+  transition: box-shadow 500ms ease;
+
+  margin-left: 30px;
+  margin-bottom: 30px;
+
+  &:hover {
+    box-shadow: 4px 4px 6px 2px rgba(34, 60, 80, 0.25);
+    backface-visibility: visible;
+  }
   & > div:first-child {
     height: 180px;
-    width: 270px;
+    width: 100%;
   }
   & > div + div {
     padding: 20px 25px;
   }
-  & > div:last-child {
-    border-top: 1px solid #e7ecf2;
+  & > div:nth-child(2) {
+    & > div:first-child {
+      max-width: 150px;
+      div:first-child {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.bestSellers {
+  border: none;
+  border-bottom: 1px solid #e7ecf2;
+
+  box-shadow: none;
+  & > div:first-child {
+    height: 120px;
+    width: 100%;
+  }
+  & > div + div {
+    padding: 20px 0;
+  }
+  & > div:nth-child(2) {
+    border: none;
+
+    min-height: 50px;
+
+    padding-bottom: 0;
+  }
+  & > div:nth-child(2) {
+    & > div:first-child {
+      max-width: 150px;
+    }
   }
 }
 
 .miniView {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+
+  margin-left: -30px;
 }
 
 .horizontalView {
-  & > div {
+  & > a {
     margin-bottom: 30px;
 
-    flex-grow: 0;
+    transition: box-shadow 500ms ease;
+
+    &:hover {
+      box-shadow: 4px 4px 6px 2px rgba(34, 60, 80, 0.25);
+      backface-visibility: visible;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .filterWrapper {
+    display: block;
+  }
+  .sellers {
+    display: none;
+  }
+  .content {
+    max-width: 100%;
+
+    margin-top: 30px;
+  }
+  .aside {
+    max-width: 100%;
+  }
+  .asideBox {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    flex-basis: calc(50% - 20px);
+
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  .miniView {
+    margin-left: -20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .contentFilter {
+    div:last-child {
+      .filterItem:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .filter {
+    padding-bottom: 70px;
+  }
+  .card {
+    flex-basis: 100%;
+
+    margin-bottom: 20px;
   }
 }

@@ -2,12 +2,15 @@ import Image from "next/image";
 import styles from "./TutorialItem.module.scss";
 import { TutorialItemProps } from "./TutorialItem.props";
 
+import cn from "classnames";
+
 export const TutorialItem = ({
   title,
   src,
+  className,
 }: TutorialItemProps): JSX.Element => {
   return (
-    <div className={styles.item}>
+    <div className={className}>
       <div className={styles.img}>
         <Image
           src={src}

@@ -1,3 +1,4 @@
+import { Button } from "@/components";
 import { FC } from "react";
 import styles from "./ProfilePage.module.scss";
 import { ProfilePageProps } from "./ProfilePage.props";
@@ -28,6 +29,7 @@ export const ProfilePage: FC<ProfilePageProps> = ({ title }) => {
               </div>
             );
           })}
+          <Button text="Update" type="submit" className={styles.btn} />
         </form>
       </div>
     </div>

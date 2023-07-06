@@ -81,12 +81,19 @@
 
 .columnList {
   li {
-    color: #b7c3c8;
     position: relative;
 
     padding-left: 22px;
 
     margin-bottom: 13px;
+    a {
+      color: #b7c3c8;
+
+      transition: color 500ms ease;
+    }
+    a:hover {
+      color: #fff;
+    }
 
     &::before {
       content: url("../../../assets/icons/angle-right.svg");
@@ -100,7 +107,14 @@
 }
 
 .social {
-  margin-bottom: 33px;
+  margin-bottom: 30px;
+  a {
+    width: 28px;
+    height: 28px;
+    &:hover {
+      box-shadow: 3px 3px 3px 0px rgba(255, 255, 255, 0.25);
+    }
+  }
 }
 
 .formTitle {
@@ -197,6 +211,9 @@
       margin-left: 40px;
     }
   }
+  .content {
+    padding: 70px 0 50px;
+  }
 }
 
 @media (max-width: 540px) {
@@ -213,5 +230,8 @@
   .columnTitle {
     padding-bottom: 15px;
     margin-bottom: 15px;
+  }
+  .content {
+    padding: 50px 0 30px;
   }
 }

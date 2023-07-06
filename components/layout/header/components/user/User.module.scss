@@ -21,11 +21,15 @@
 
       border-width: 1px;
 
-      overflow: auto;
+      overflow: hidden;
 
       padding: 20px;
     }
   }
+}
+
+.menuLink:hover {
+  font-size: 14px;
 }
 
 .info {
@@ -77,7 +81,7 @@
 
       color: #546e7a;
 
-      padding-left: 20px;
+      padding-left: 18px;
 
       & + li {
         margin-top: 10px;
