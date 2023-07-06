@@ -34,15 +34,17 @@ export const Notification: FC<NotificationProps> = ({
     <div className={cn(styles.notification, `${type}`)}>
       <div className={styles.circle}>
         {renderIcon()}
-        <span
-          className={cn({
-            [styles.orange]: type === "notification",
-            [styles.yellow]: type === "message",
-            [styles.green]: type === "basket",
-          })}
-        >
-          {count}
-        </span>
+        {count > 0 && (
+          <span
+            className={cn({
+              [styles.orange]: type === "notification",
+              [styles.yellow]: type === "message",
+              [styles.green]: type === "basket",
+            })}
+          >
+            {count}
+          </span>
+        )}
         <Tooltip type={type} />
       </div>
     </div>

@@ -11,6 +11,7 @@ import cn from "classnames";
 import { usePathname } from "next/navigation";
 
 import { cardData } from "../productContainer/ProductContainer";
+import { useBasketStore } from "@/store/store";
 
 const data = [
   {
@@ -54,6 +55,8 @@ const data = [
 export const DetailContainer: FC = () => {
   const [id] = usePathname().split("/").slice(-1);
   const product = cardData[+id - 1];
+
+  const addToBakset = useBasketStore((store) => store.addToBakset);
 
   return (
     <section className={styles.detailContainer}>
@@ -116,6 +119,7 @@ export const DetailContainer: FC = () => {
               </div>
               <Button
                 text="Add To Cart"
+                onClick={() => addToBakset(product)}
                 type="button"
                 className={cn(styles.asideBtn, styles.cart)}
               >

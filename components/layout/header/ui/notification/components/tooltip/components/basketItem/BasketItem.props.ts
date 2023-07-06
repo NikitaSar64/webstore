@@ -1,8 +1,13 @@
 import { StaticImageData } from "next/image";
 
-export interface BasketItemProps {
+type basketProduct = {
+  id: number;
   name: string;
   category: string;
   price: number;
-  img: StaticImageData;
+  productImg: StaticImageData;
+};
+
+export interface BasketItemProps {
+  item: basketProduct;
 }

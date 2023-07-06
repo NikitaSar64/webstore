@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
 import { HTMLAttributes } from "react";
 
-interface ICard {
+export interface ICard {
   id: number;
   name: string;
   category: string;

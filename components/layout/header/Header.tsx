@@ -11,7 +11,8 @@ import { Menu, User } from "./components";
 import cn from "classnames";
 import Link from "next/link";
 import ROUTES from "@/routes/routes";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useBasketStore } from "@/store/store";
 
 const testUser = {
   name: "Mike Hussy",
@@ -23,6 +24,8 @@ export const Header: FC = (): JSX.Element => {
   const [popUpActive, setPopUpActive] = useState<boolean>(false);
   const pathName = usePathname();
   const params = useSearchParams();
+
+  const basket = useBasketStore((store) => store.basket);
 
   useEffect(() => {
     if (popUpActive) {
@@ -49,7 +52,7 @@ export const Header: FC = (): JSX.Element => {
             <div className={styles.box}>
               <Notification type="notification" count={8} />
               <Notification type="message" count={5} />
-              <Notification type="basket" count={3} />
+              <Notification type="basket" count={basket.length} />
               <User userData={testUser} />
               {/* <Button
                 text="Login"
