@@ -1,6 +1,8 @@
 import { FC } from "react";
 import styles from "./ErrorContainer.module.scss";
 import { BreadCrumbs } from "@/components";
+import Link from "next/link";
+import ROUTES from "@/routes/routes";
 
 export const ErrorContainer: FC = () => {
   return (
@@ -16,9 +18,12 @@ export const ErrorContainer: FC = () => {
               The page you are looking is not available or has been removed. Try
               going to Home Page by using the button below.
             </p>
-            <a href="#" className={styles.outherLink}>
+            <Link
+              href={ROUTES.main.createRoute()}
+              className={styles.outherLink}
+            >
               Go To Home Page
-            </a>
+            </Link>
           </div>
         </div>
       </div>
