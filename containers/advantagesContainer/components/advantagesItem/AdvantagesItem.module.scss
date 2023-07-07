@@ -17,6 +17,9 @@
     .title {
       color: $green;
     }
+    .text {
+      color: #fff;
+    }
   }
 }
 
@@ -57,4 +60,6 @@
   font-size: 15px;
 
   color: #b0bec5;
+
+  transition: color 0.3s;
 }

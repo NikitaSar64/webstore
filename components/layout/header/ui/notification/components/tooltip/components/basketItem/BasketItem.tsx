@@ -23,7 +23,7 @@ export const BasketItem: FC<BasketItemProps> = ({ item }): JSX.Element => {
       <div className={styles.info}>
         <div className={styles.name}>{item.name}</div>
         <div className={styles.category}>{item.category}</div>
-        <div className={styles.price}>{item.price}</div>
+        <div className={styles.price}>{item.price} $</div>
       </div>
     </Link>
   );
