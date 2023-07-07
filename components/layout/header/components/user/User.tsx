@@ -10,13 +10,11 @@ import ROUTES from "@/routes/routes";
 export const User: FC<UserProps> = ({ userData }): JSX.Element => {
   return (
     <div className={styles.user}>
-      <Link href={ROUTES.profile.createRoute(1)} className={styles.userLink}>
-        <Avatar src={userData.img} />
-        <div className={styles.info}>
-          <div className={styles.name}>{userData.name}</div>
-          <div className={styles.balance}>{userData.balance}</div>
-        </div>
-      </Link>
+      <Avatar src={userData.img} />
+      <div className={styles.info}>
+        <div className={styles.name}>{userData.name}</div>
+        <div className={styles.balance}>{userData.balance}</div>
+      </div>
       <div className={styles.menu}>
         <ul>
           <li>

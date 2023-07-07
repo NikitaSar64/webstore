@@ -81,24 +81,30 @@
   }
 }
 
-@media (max-width: 840px) {
-  .openMenuBtn {
-    display: flex;
-
-    align-items: center;
-  }
-}
-
 .box {
   width: 300px;
 
   background-color: $bg;
 
   color: #fff;
+  a {
+    color: #fff;
+  }
+  .activeLink {
+    color: gray;
+  }
   ul {
     padding: 0;
   }
   li {
     border-bottom: 1px solid #fff;
+  }
+}
+
+@media (max-width: 840px) {
+  .openMenuBtn {
+    display: flex;
+
+    align-items: center;
   }
 }

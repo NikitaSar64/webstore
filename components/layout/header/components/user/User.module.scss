@@ -13,6 +13,8 @@
 
   position: relative;
 
+  cursor: pointer;
+
   height: 90px;
 
   &:hover {
@@ -26,11 +28,6 @@
       padding: 20px;
     }
   }
-}
-
-.userLink {
-  display: flex;
-  align-items: center;
 }
 
 .menuLink:hover {

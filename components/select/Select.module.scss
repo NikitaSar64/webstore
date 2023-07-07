@@ -1,26 +1,28 @@
 @import "@styles/variables.scss";
 
-.select {
-  padding-left: 20px;
+.selectWrapper {
+  .select {
+    padding-left: 20px;
 
-  font-size: 15px;
+    font-size: 15px;
 
-  color: #707070;
-}
+    color: #707070;
+  }
 
-.root {
-  height: 45px;
-  &::before {
+  .root {
     height: 45px;
+    &::before {
+      height: 45px;
 
-    border: 1px solid #dddddd;
+      border: 1px solid #dddddd;
 
-    box-sizing: border-box;
-  }
-  &::after {
-    border: none;
-  }
-  &:hover:not(.Mui-disabled, .Mui-error):before {
-    border: 1px solid #dddddd;
+      box-sizing: border-box;
+    }
+    &::after {
+      border: none;
+    }
+    &:hover:not(.Mui-disabled, .Mui-error):before {
+      border: 1px solid #dddddd;
+    }
   }
 }

@@ -4,6 +4,13 @@
   padding: 25px 0;
 
   display: flex;
+
+  .authorAvatar {
+    width: 73px;
+    height: 63px;
+
+    border-radius: 0;
+  }
 }
 
 .authorInfo {
@@ -39,13 +46,6 @@
       background-color: $green;
     }
   }
-}
-
-.authorAvatar {
-  width: 73px;
-  height: 63px;
-
-  border-radius: 0;
 }
 
 .authorName {
